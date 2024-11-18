@@ -12064,16 +12064,6 @@ textarea.form-control-lg {
   height: 40px;
 }
 
-.fixed {
-  position: fixed;
-  width: 25%;
-}
-
-.scrollit {
-  float: left;
-  width: 71%;
-}
-
 .fixed-bottom {
   background: rgb(18, 18, 18);
   background: linear-gradient(0deg, rgb(18, 18, 18) 0%, rgb(9, 9, 9) 20%, rgba(18, 18, 18, 0.6554271367) 100%);
