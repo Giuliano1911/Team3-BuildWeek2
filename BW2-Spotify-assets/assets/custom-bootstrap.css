@@ -12091,4 +12091,8 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b3b3b3;
+}
+
+.small-text {
+  font-size: 0.7rem !important;
 }/*# sourceMappingURL=custom-bootstrap.css.map */
