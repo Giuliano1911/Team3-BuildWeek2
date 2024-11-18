@@ -12062,4 +12062,8 @@ textarea.form-control-lg {
 .fixed-bottom {
   background: rgb(18, 18, 18);
   background: linear-gradient(0deg, rgb(18, 18, 18) 0%, rgb(9, 9, 9) 20%, rgba(18, 18, 18, 0.6554271367) 100%);
+}
+
+body {
+  font-family: "Circular", Arial, Helvetica, sans-serif;
 }/*# sourceMappingURL=custom-bootstrap.css.map */
