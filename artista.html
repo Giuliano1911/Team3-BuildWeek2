@@ -3,13 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Artist Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link
       rel="stylesheet"
       href="./BW2-Spotify-assets/assets/custom-bootstrap.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
-  <body>
+  <body class="bg-sfondo">  <!--gli style sono da trasportare in css-->
+    <main>
+      <div class="container-fluid" style="background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg'); background-size: cover"> <!--Qui va di sfondo l'immagine dell'artista -->
+        <div class="row h-100">
+          <div class="col col-12 col-md-3 col-md-9 col-lg-2 col-lg-9 col-lg-1">
+            <div class="row pt-2">
+              <div class="col col-6 d-md-none d-flex"> <!--display none da tablet in su-->
+              <p id="time" class="text-light pe-2">22:22</p> <!--Qui possiamo inserire dinamicamente l'ora con JS-->
+              <p><i class="bi bi-moon text-light pe-2"></i></p>
+              <p><i class="bi bi-instagram text-light pe-2"></i></p>
+              <p><i class="bi bi-android2 text-light pe-2"></i></p>
+              <p><i class="bi bi-app text-light pe-2"></i></p>
+              <p><i class="bi bi-dot text-light"></i></p>
+            </div>
+            <div class="col col-6 d-md-none d-flex justify-content-end"> <!--display none da tablet in su-->
+              <p><i class="bi bi-reception-4 text-light pe-2"></i></p>
+              <p><i class="bi bi-wifi text-light pe-2"></i></p>
+              <p><i class="bi bi-battery-half text-light"></i></p>
+            </div>
+            </div>
+            <div class="row d-flex flex-column">
+              <div class="col col-12">
+                <p><i class="bi bi-arrow-left-circle-fill h1 text-secondary"></i></p>
+                <div class="row"><h2 class="text-light">NOME ARTISTA</h2></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class=" col col-12 ">
+            <p class="text-secondary pt-3">1.000.000 ascoltatori mensili</p>
+            </div>
+            <div class="row">
+              <div class="col col-6 d-flex">
+            <button type="button" class="btn btn-dark btn-outline-secondary border-top-0 text-light">Seguiti</button> <!--questo button è da stilare-->
+            <p class=" d-flex align-items-end ps-3"><i class="bi bi-three-dots-vertical text-light"></i></p>
+          </div>
+          <div class="col col-6 d-flex justify-content-end align-items-center">
+            <p><i class="bi bi-shuffle text-success pe-3"></i></p>
+            <p><i class="bi bi-play-circle-fill text-success h1"></i></p>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col col-3">
+          <!--Qui l'immagine cambia con JS e la dimensione dell'icona va settata con CSS-->
+          <img src="https://i.scdn.co/image/ab6761610000e5eb3d66c8edfe99c00a8ef9aeca" class="rounded-circle mt-4" style="height: 80px; width: 80px;" alt="artist">
+          <span class="rounded-circle border border-2 border-light bg-success position-relative" style="bottom:25px; left:45px;"> <i class="bi bi-heart-fill text-dark p-2 h6"></i></span>
+        </div>
+        <div class="col col-9 d-flex flex-column justify-content-center mt-4">
+          <h6 class="text-light">Brani che ti piacciono</h6>
+          <p class="text-light">10 brani di Verdena</p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col col-12">
+          <h6 class="text-light">Popolari</h6>
+          <div class="row pt-2">
+            <div class="col col-12 d-flex position-relative">
+              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <!--stile da aggiungere in CSS-->
+                <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
+              <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
+              <p class="text-secondary mt-0">50.250.000</p></span>
+              <p class="position-absolute top-50 end-0 translate-middle-y pe-3"><i class="bi bi-three-dots-vertical text-light"></i></p>
+            </div>
+          </div>
+          <div class="row pt-4">
+            <div class="col col-12 d-flex position-relative">
+              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <!--stile da aggiungere in CSS-->
+                <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
+              <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
+              <p class="text-secondary mt-0">50.250.000</p></span>
+              <p class="position-absolute top-50 end-0 translate-middle-y pe-3"><i class="bi bi-three-dots-vertical text-light"></i></p>
+            </div>
+          </div>
+          <div class="row pt-4">
+            <div class="col col-12 d-flex position-relative">
+              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <!--stile da aggiungere in CSS-->
+                <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
+              <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
+              <p class="text-secondary mt-0">50.250.000</p></span>
+              <p class="position-absolute top-50 end-0 translate-middle-y pe-3"><i class="bi bi-three-dots-vertical text-light"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3 ">
+        <div class="col col-12 bg-secondary d-flex rounded">
+          <img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" alt="icona-copertina-album" class="rounded-circle my-1" style="height:30px; width:30px"> <!--qui in JS carica la copertina dell'album, stile da aggiungere in css-->
+          <p class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0">Whatever, a song</p>
+          <span class="d-flex ps-4 align-items-center"><p class="px-3 mb-0"><i class="bi bi-laptop text-light h2"></i></p>
+          <p class="pe-3 mb-0"><i class="bi bi-heart text-light"></i></p>
+          <p class="mb-0"><i class="bi bi-play-fill text-light h2"></i></p></span>
+
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer>
+    <div class="container-fluid mt-3">
+      <div class="col col-12 ">
+        <div class="row d-flex">
+      <span class="d-flex justify-content-around pe-4"><p class="mb-0"><i class="bi bi-house-door text-light h1"></i></p>
+<p class="mb-0"><i class="bi bi-search text-light h1"></i></p>
+<p class="mb-0"><i class="bi bi-music-note-list text-light h1"></i></p></span></div>
+<div class="row">
+  <span class="d-flex justify-content-around ps-4"><p class="mb-0">Home</p>
+  <p class="mb-0 ps-4">Cerca</p>
+  <p class="mb-0">La tua libreria</p></span>
+</div>
+</div>
+</div>
+    </footer>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
