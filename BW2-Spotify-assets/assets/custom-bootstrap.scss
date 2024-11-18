@@ -11,6 +11,22 @@ $theme-colors: map-merge($theme-colors, $new-theme);
 
 @import './BootstrapSCSS/bootstrap.scss';
 
+// ICONE ALBUM
+
+// ICONA PLAY
+#round-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.fixed {
+  position: fixed;
+  width: 25%;
+}
+.scrollit {
+  float: left;
+  width: 71%;
+}
 .fixed-bottom {
   background: rgb(18, 18, 18);
   background: linear-gradient(
@@ -19,4 +35,8 @@ $theme-colors: map-merge($theme-colors, $new-theme);
     rgba(9, 9, 9, 1) 20%,
     rgba(18, 18, 18, 0.6554271366749824) 100%
   );
+}
+
+body {
+  font-family: 'Circular', Arial, Helvetica, sans-serif;
 }
