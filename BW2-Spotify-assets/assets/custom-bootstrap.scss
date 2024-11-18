@@ -1,0 +1,12 @@
+@import './BootstrapSCSS/functions';
+@import './BootstrapSCSS/variables';
+
+$new-theme: (
+  'success': #1fd65e,
+  'sfondo': #121212,
+  'primary': #4087e1,
+);
+
+$theme-colors: map-merge($theme-colors, $new-theme);
+
+@import './BootstrapSCSS/bootstrap.scss';
