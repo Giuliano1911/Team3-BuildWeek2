@@ -1,0 +1,30 @@
+.card {
+  background-color: #1e1e1e; /* Colore della card */
+  border: none;
+  margin-bottom: 30px; /* Spaziatura tra le card */
+  width: 100%; /* Rende la card responsive */
+}
+#img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Copre lo spazio senza distorcere */
+  border-radius: 8px 8px 0 0; /* Solo angoli superiori */
+  align-self: center;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: none;
+  margin-right: 15px; /* Spazio tra le card */
+  width: 300px; /* Larghezza fissa per le card */
+}
+.card img {
+  border-radius: 8px;
+  width: 80px; /* Larghezza dell'immagine */
+  height: 80px; /* Altezza dell'immagine */
+}
+
+.playlist-card {
+  display: flex; /* Per mantenere l'immagine e il testo in una riga */
+  align-items: center; /* Allineamento verticale */
+}
