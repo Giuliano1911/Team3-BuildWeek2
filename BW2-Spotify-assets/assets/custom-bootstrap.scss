@@ -10,3 +10,13 @@ $new-theme: (
 $theme-colors: map-merge($theme-colors, $new-theme);
 
 @import './BootstrapSCSS/bootstrap.scss';
+
+.fixed-bottom {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(9, 9, 9, 1) 20%,
+    rgba(18, 18, 18, 0.6554271366749824) 100%
+  );
+}
