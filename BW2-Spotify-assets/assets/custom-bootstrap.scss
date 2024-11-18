@@ -10,3 +10,20 @@ $new-theme: (
 $theme-colors: map-merge($theme-colors, $new-theme);
 
 @import './BootstrapSCSS/bootstrap.scss';
+
+// ICONE ALBUM
+
+// ICONA PLAY
+#round-circle {
+  width: 40px;
+  height: 40px;
+}
+
+.fixed {
+  position: fixed;
+  width: 25%;
+}
+.scrollit {
+  float: left;
+  width: 71%;
+}
