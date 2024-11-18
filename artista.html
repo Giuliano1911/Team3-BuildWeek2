@@ -10,11 +10,13 @@
       href="./BW2-Spotify-assets/assets/custom-bootstrap.css"
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Team3-BuildWeek2/BW2-Spotify-assets/assets/css/circular-font.css">
     
   </head>
-  <body class="bg-sfondo">  <!--gli style sono da trasportare in css-->
+  <body class="bg-sfondo">  <!--gli stili sono da trasportare in css-->
     <main>
-      <div class="container-fluid" style="background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg'); background-size: cover"> <!--Qui va di sfondo l'immagine dell'artista -->
+      <section>
+      <div class="container-fluid" style="background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg'); background-size: cover; height:250px"> <!--Qui va di sfondo l'immagine dell'artista -->
         <div class="row h-100">
           <div class="col col-12 col-md-3 col-md-9 col-lg-2 col-lg-9 col-lg-1">
             <div class="row pt-2">
@@ -33,15 +35,18 @@
             </div>
             </div>
             <div class="row d-flex flex-column">
-              <div class="col col-12">
-                <p><i class="bi bi-arrow-left-circle-fill h1 text-secondary"></i></p>
-                <div class="row"><h2 class="text-light">NOME ARTISTA</h2></div>
+              <div class="col col-12 position-relative">
+                <p><i class="bi bi-arrow-left-circle-fill h1 text-secondary mb-5 pb-5"></i></p>
+                <h1 class="text-light mt-5 pt-5">NOME ARTISTAAAAAAAAAAAA</h1>
               </div>
+              
             </div>
             
           </div>
         </div>
       </div>
+    </section>
+    <section>
       <div class="container">
         <div class="row">
           <div class=" col col-12 ">
@@ -49,7 +54,7 @@
             </div>
             <div class="row">
               <div class="col col-6 d-flex">
-            <button type="button" class="btn btn-dark btn-outline-secondary border-top-0 text-light">Seguiti</button> <!--questo button è da stilare-->
+            <button type="button" class="btn btn-sfondo btn-outline-secondary border-top-0 text-light w-75 h-75">Seguiti</button> <!--questo button è da stilare-->
             <p class=" d-flex align-items-end ps-3"><i class="bi bi-three-dots-vertical text-light"></i></p>
           </div>
           <div class="col col-6 d-flex justify-content-end align-items-center">
@@ -62,7 +67,7 @@
         <div class="col col-3">
           <!--Qui l'immagine cambia con JS e la dimensione dell'icona va settata con CSS-->
           <img src="https://i.scdn.co/image/ab6761610000e5eb3d66c8edfe99c00a8ef9aeca" class="rounded-circle mt-4" style="height: 80px; width: 80px;" alt="artist">
-          <span class="rounded-circle border border-2 border-light bg-success position-relative" style="bottom:25px; left:45px;"> <i class="bi bi-heart-fill text-dark p-2 h6"></i></span>
+          <span class="rounded-circle border border-2 border-light bg-success position-relative" style="bottom:25px; left:60px"> <i class="fa-solid fa-heart p-1"></i></span>
         </div>
         <div class="col col-9 d-flex flex-column justify-content-center mt-4">
           <h6 class="text-light">Brani che ti piacciono</h6>
@@ -74,7 +79,7 @@
           <h6 class="text-light">Popolari</h6>
           <div class="row pt-2">
             <div class="col col-12 d-flex position-relative">
-              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <h6 class="text-light pe-4 align-self-center ps-1">1</h6>
               <!--stile da aggiungere in CSS-->
                 <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
               <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
@@ -84,7 +89,7 @@
           </div>
           <div class="row pt-4">
             <div class="col col-12 d-flex position-relative">
-              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <h6 class="text-light pe-4 align-self-center">2</h6>
               <!--stile da aggiungere in CSS-->
                 <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
               <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
@@ -94,7 +99,7 @@
           </div>
           <div class="row pt-4">
             <div class="col col-12 d-flex position-relative">
-              <h6 class="text-light pe-4 align-self-center">1</h6>
+              <h6 class="text-light pe-4 align-self-center">3</h6>
               <!--stile da aggiungere in CSS-->
                 <span class="pe-3"><img src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg" style="height:70px; width:70px"></span>
               <span class="align-self-center"><p class="text-light mb-0">Volevo magia</p>
@@ -115,6 +120,7 @@
         </div>
       </div>
       </div>
+    </section>
     </main>
     <footer>
     <div class="container-fluid mt-3">
