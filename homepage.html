@@ -26,37 +26,26 @@
     <link rel="stylesheet" href="./homepage.css" />
   </head>
 
-  <body>
+  <body class="bg-sfondo text-white">
     <header class="bg-dark text-white">
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar d-lg-none navbar-dark p-1 fw-bold">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Spotify</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <a class="navbar-brand" href="#">Buonasera</a>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto flex-column flex-lg-row">
+            <ul class="navbar-nav ms-auto flex-column">
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <i class="bi bi-house-door-fill"></i> Home
+                  <i class="bi bi-bell text-white"></i>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <i class="bi bi-search"></i> Cerca
+                  <i class="bi bi-clock text-white"></i>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <i class="bi bi-music-note-list"></i> La tua libreria
+                  <i class="bi bi-gear text-white"></i>
                 </a>
               </li>
             </ul>
@@ -66,23 +55,29 @@
     </header>
 
     <main class="container mt-4">
-      <div class="row text-center">
-        <div class="col-12">
-          <h1>Benvenuto su Spotify</h1>
-          <p>Il tuo viaggio musicale inizia qui.</p>
-          <a href="#" class="btn playlist-button btn-lg">Inizia</a>
+      <div class="row text-center mb-3">
+        <div class="col-6">
+          <a class="text-white text-decoration-none h5" href="#musica"
+            >Musica</a
+          >
+        </div>
+        <div class="col-6">
+          <a class="text-white text-decoration-none h5" href="#Podcasteshow"
+            >Podcast e show</a
+          >
         </div>
       </div>
 
-      <div class="featured-playlist">
+      <div id="musica" class="mt-5">
         <h2>Musica</h2>
-        <div class="d-flex flex-wrap justify-content-center">
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+        <div class="row d-flex flex-wrap justify-content-center">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/80"
-                alt="Chill Vibes"
-                class="card-img-top"
+                src="BW2-Spotify-assets/assets/imgs/main/image-1.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="early stage emily syndrome"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">
@@ -91,62 +86,63 @@
               </div>
             </div>
           </div>
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/80"
-                alt="Top Hits"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-10.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="Be The Young"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">Be The Young</h5>
               </div>
             </div>
           </div>
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/80"
-                alt="Workout Playlist"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-15.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="saggio vibes"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">saggio vibes</h5>
               </div>
             </div>
           </div>
-        </div>
-        <div class="d-flex flex-wrap justify-content-center">
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
                 src="https://via.placeholder.com/80"
-                alt="Chill Vibes"
-                class="card-img-top"
+                alt="Brani che ti piacciono"
+                class="card-img-left"
+                style="width: 100px; height: auto"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">Brani che ti piacciono</h5>
               </div>
             </div>
           </div>
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/80"
-                alt="Top Hits"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-17.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">2021 lol</h5>
               </div>
             </div>
           </div>
-          <div class="card m-2" style="width: 18rem">
-            <div class="playlist-card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/80"
-                alt="Workout Playlist"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-12.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
               />
               <div class="card-body">
                 <h5 class="card-title text-white">Deep dive with Ali Abdaal</h5>
@@ -156,15 +152,16 @@
         </div>
       </div>
 
-      <div class="featured-playlist">
-        <h2>Altro di ciò che ti piace</h2>
-        <div class="row">
-          <!-- Modificato per avere due colonne su mobile -->
-          <div class="col-6 col-sm-6 col-md-4 mb-4">
-            <div class="card">
+      <div id="Podcasteshow" class="mt-5">
+        <h2>Podcast e Show</h2>
+        <div class="row mt-5">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/350x180"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-9.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="Hot Hits Italia"
               />
               <div class="card-body text-white">
                 <h5 class="card-title">Hot Hits Italia</h5>
@@ -172,11 +169,13 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-4 mb-4">
-            <div class="card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/350x180"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-6.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="big on the internet"
               />
               <div class="card-body text-white">
                 <h5 class="card-title">big on the internet</h5>
@@ -184,11 +183,13 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-4 mb-4">
-            <div class="card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/350x180"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-4.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="Pop Rising"
               />
               <div class="card-body text-white">
                 <h5 class="card-title">Pop Rising</h5>
@@ -196,11 +197,13 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-4 mb-4">
-            <div class="card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/350x180"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-14.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="Canzoni tristi"
               />
               <div class="card-body text-white">
                 <h5 class="card-title">Canzoni tristi</h5>
@@ -208,11 +211,13 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-4 mb-4">
-            <div class="card">
+          <div class="col-12 col-sm-6 col-md-4 mb-4">
+            <div class="card d-flex flex-row">
               <img
-                src="https://via.placeholder.com/350x180"
-                class="card-img-top"
+                src="./BW2-Spotify-assets/assets/imgs/main/image-2.jpg"
+                class="card-img-left"
+                style="width: 100px; height: auto"
+                alt="In tendenza"
               />
               <div class="card-body text-white">
                 <h5 class="card-title">In tendenza</h5>
@@ -224,7 +229,190 @@
       </div>
     </main>
 
-    <footer class="bg-dark text-white text-center"></footer>
+    <footer class="">
+      <div class="fixed-bottom d-md-none py-2">
+        <div class="container">
+          <div class="row justify-content-around">
+            <div class="col d-flex flex-column text-center">
+              <a class="text-white fs-2" href="./homepage.html"
+                ><i class="bi bi-house-door"></i
+              ></a>
+              <a class="text-white text-decoration-none" href="./homepage.html"
+                >Home</a
+              >
+            </div>
+            <div class="col d-flex flex-column text-center">
+              <a class="text-white fs-2" href="./search.html"
+                ><i class="bi bi-search"></i
+              ></a>
+              <a class="text-white text-decoration-none" href="./search.html"
+                >Cerca</a
+              >
+            </div>
+            <div class="col d-flex flex-column text-center">
+              <a class="text-white fs-2" href="#"
+                ><i class="bi bi-music-note-list"></i
+              ></a>
+              <a class="text-white text-decoration-none text-nowrap" href="#"
+                >La tua libreria</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container d-none d-md-block">
+        <div class="row text-white">
+          <div class="col col-2 d-flex flex-column">
+            <h6>Azienda</h6>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Chi siamo</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Opportunità di lavoro</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >For the Record</a
+              >
+            </p>
+          </div>
+          <div class="col col-2 d-flex flex-column">
+            <h6>Community</h6>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Per artisti</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Sviluppatori</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Pubblicità</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Investitori</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Venditori</a
+              >
+            </p>
+          </div>
+          <div class="col col-2 d-flex flex-column">
+            <h6>Link utili</h6>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Assistenza</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >App per cellulare</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Diritti del consumatore</a
+              >
+            </p>
+          </div>
+          <div class="col col-2 d-flex flex-column">
+            <h6>Piani Spotify</h6>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Premium Individual</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Premium Duo</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Premium Family</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Premium Student</a
+              >
+            </p>
+            <p class="mb-2">
+              <a
+                href="#"
+                class="link-ligth link-underline-opacity-0 link-underline-light text-white opacity-75 link-underline-opacity-100-hover"
+                >Spotify Free</a
+              >
+            </p>
+          </div>
+          <div class="col col-4 text-end">
+            <a
+              href="#"
+              class="text-white fs-6 border border-1 rounded-circle btn btn-dark me-2"
+            >
+              <i class="bi bi-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-white fs-6 border border-1 rounded-circle btn btn-dark me-2"
+            >
+              <i class="bi bi-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="text-white fs-6 border border-1 rounded-circle btn btn-dark"
+            >
+              <i class="bi bi-facebook"></i
+            ></a>
+          </div>
+          <hr class="mt-4 opacity-25" />
+          <p class="mb-0 mt-3 opacity-75">
+            © <span id="current-year"></span> Spotify AB
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script
