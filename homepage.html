@@ -23,49 +23,7 @@
       rel="stylesheet"
       href="./BW2-Spotify-assets/assets/custom-bootstrap.css"
     />
-    <style>
-      body {
-        background-color: #121212;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-      .navbar {
-        padding: 1rem;
-      }
-      .card {
-        background-color: #1e1e1e;
-        border: none;
-      }
-      .card img {
-        border-radius: 8px;
-      }
-      footer {
-        background-color: #1a1a1a;
-        padding: 1.5rem 0;
-      }
-      .navbar-brand {
-        font-weight: bold;
-      }
-      .featured-playlist {
-        margin: 30px 0;
-      }
-      .playlist-button {
-        background-color: #1db954;
-        border: none;
-        color: white;
-      }
-      .playlist-card {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-bottom: 20px;
-      }
-      .playlist-card img {
-        width: 80px;
-        height: 80px;
-        margin-right: 15px;
-      }
-    </style>
+    <link rel="stylesheet" href="./homepage.css" />
   </head>
 
   <body>
@@ -117,100 +75,156 @@
       </div>
 
       <div class="featured-playlist">
-        <h2>Playlist in evidenza</h2>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Chill Vibes" />
-          <div class="card-body">
-            <h5 class="card-title">Chill Vibes</h5>
-            <p class="card-text">
-              Rilassati e distenditi con queste canzoni chill.
-            </p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+        <h2>Musica</h2>
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Chill Vibes"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">
+                  early stage emily syndrome (sett-ott 2022)
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Top Hits"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">Be The Young</h5>
+              </div>
+            </div>
+          </div>
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Workout Playlist"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">saggio vibes</h5>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Top Hits" />
-          <div class="card-body">
-            <h5 class="card-title">Top Hits</h5>
-            <p class="card-text">
-              Resta aggiornato con i successi più recenti.
-            </p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Chill Vibes"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">Brani che ti piacciono</h5>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Workout Playlist" />
-          <div class="card-body">
-            <h5 class="card-title">Workout Playlist</h5>
-            <p class="card-text">Fatti motivare con questi brani energici.</p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Top Hits"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">2021 lol</h5>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Chill Vibes" />
-          <div class="card-body">
-            <h5 class="card-title">Chill Vibes</h5>
-            <p class="card-text">
-              Rilassati e distenditi con queste canzoni chill.
-            </p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
-          </div>
-        </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Top Hits" />
-          <div class="card-body">
-            <h5 class="card-title">Top Hits</h5>
-            <p class="card-text">
-              Resta aggiornato con i successi più recenti.
-            </p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
-          </div>
-        </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Workout Playlist" />
-          <div class="card-body">
-            <h5 class="card-title">Workout Playlist</h5>
-            <p class="card-text">Fatti motivare con questi brani energici.</p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+          <div class="card m-2" style="width: 18rem">
+            <div class="playlist-card">
+              <img
+                src="https://via.placeholder.com/80"
+                alt="Workout Playlist"
+                class="card-img-top"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-white">Deep dive with Ali Abdaal</h5>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="featured-playlist">
-        <h2>Nuove uscite di album</h2>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="New Album" />
-          <div class="card-body">
-            <h5 class="card-title">Nuovo Album</h5>
-            <p class="card-text">Descrizione del nuovo album.</p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+        <h2>Altro di ciò che ti piace</h2>
+        <div class="row">
+          <!-- Modificato per avere due colonne su mobile -->
+          <div class="col-6 col-sm-6 col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x180"
+                class="card-img-top"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title">Hot Hits Italia</h5>
+                <p class="card-text">La playlist più calda del web</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="playlist-card">
-          <img src="https://via.placeholder.com/80" alt="Another Album" />
-          <div class="card-body">
-            <h5 class="card-title">Un Altro Album</h5>
-            <p class="card-text">Descrizione di un altro album.</p>
-            <a href="#" class="btn playlist-button">Ascolta</a>
+          <div class="col-6 col-sm-6 col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x180"
+                class="card-img-top"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title">big on the internet</h5>
+                <p class="card-text">iykyk</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x180"
+                class="card-img-top"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title">Pop Rising</h5>
+                <p class="card-text">The hits of tomorrow are on</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x180"
+                class="card-img-top"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title">Canzoni tristi</h5>
+                <p class="card-text">It's okay not be okay :'(</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x180"
+                class="card-img-top"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title">In tendenza</h5>
+                <p class="card-text">Viral & Trending: le canzoni</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="bg-dark text-white text-center">
-      <p>&copy; 2023 Spotify Ltd. All rights reserved.</p>
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          <a class="text-white" href="#">Chi siamo</a>
-        </li>
-        <li class="list-inline-item">
-          <a class="text-white" href="#">Supporto</a>
-        </li>
-        <li class="list-inline-item">
-          <a class="text-white" href="#">Privacy</a>
-        </li>
-      </ul>
-    </footer>
+    <footer class="bg-dark text-white text-center"></footer>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script
