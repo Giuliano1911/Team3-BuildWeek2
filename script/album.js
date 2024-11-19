@@ -21,6 +21,9 @@ const id = addressBarContent.get('id')
 const albumDivMd = document.getElementById('album-top-md')
 const albumDivSm = document.getElementById('album-top-sm')
 const albumRowSM = document.getElementById('album-row-sm')
+const recommended = document.getElementById('recommended')
+let bandName = ''
+let url2 = ''
 
 fetch(url + id)
   .then((response) => {
@@ -33,11 +36,12 @@ fetch(url + id)
   })
   .then((album) => {
     console.log(album)
+    bandName = `${album.artist.name}`
     const releaseDate = new Date(album.release_date).getFullYear()
     const albumMinutes = Math.floor(album.duration / 60)
     const albumSeconds = album.duration - albumMinutes * 60
 
-    albumDivMd.innerHTML = `<img id="img" src='${album.cover}' onload=start()>
+    albumDivMd.innerHTML = `<img src='${album.cover}'>
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h6 class="small-text">ALBUM</h6>
@@ -53,7 +57,8 @@ fetch(url + id)
     </div>
     </div>
     `
-    albumDivSm.innerHTML = `<img src=${album.cover_big} class="mx-auto w-50">
+    // onload="start()" sotto
+    albumDivSm.innerHTML = `<img id="img" crossorigin='anonymous' src=${album.cover_big} class="mx-auto w-50"> 
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h2 class="fw-bold mt-3">${album.title}</h2>
@@ -98,10 +103,35 @@ fetch(url + id)
       </div>`
       albumRowSM.appendChild(newRow)
     }
+    url2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${bandName}`
+    createRecommended()
   })
   .catch((err) => {
     console.log('errore', err)
   })
+
+const createRecommended = function () {
+  fetch(url2)
+    .then((response) => {
+      console.log(response)
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('No ok')
+      }
+    })
+    .then((data) => {
+      console.log(data)
+      const newDiv = document.createElement('div')
+      newDiv.innerHTML = ``
+      for (let i = 0; i < 3; i++) {
+        recommended
+      }
+    })
+    .catch((err) => {
+      console.log('errore', err)
+    })
+}
 
 // background color
 
