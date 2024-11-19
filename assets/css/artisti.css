@@ -1,0 +1,17 @@
+#seguiti-button{
+    background-color: #121212;
+    border:1px solid #121212;
+    color: white;
+    box-shadow: inset 200px 200px 300px 142px rgb(24 24 22);
+    padding: 5px 10px 5px 10px;
+}
+
+#following{
+    height:40px;
+    width:120px;
+    background-color: #121212;
+    border: 2px solid white;
+    color: white;
+    text-align: center;
+    
+}

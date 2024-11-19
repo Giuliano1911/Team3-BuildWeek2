@@ -8,10 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+      <link rel="stylesheet" href="./assets/css/artisti.css">
+    
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
   </head>
   <body class="bg-sfondo">
@@ -308,7 +308,7 @@
           >
             <section>
               <div
-                class="container-fluid"
+                class="container-fluid h-50"
                 style="
                   background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg');
                   background-size: cover;
@@ -394,32 +394,36 @@
                         1.000.000 ascoltatori mensili
                       </p>
                     </div>
-                    <div class="row pt-4 align-items-center">
-                      <div class="col col-6 d-flex">
+                    <div class="row pt-4">
+                      <div class="col col-6 d-flex ">
                         <p class="d-none d-md-inline">
-                          <i class="bi bi-play-circle-fill text-success h1"></i>
+                          <i class="bi bi-play-circle-fill text-success h1" ></i>
                         </p>
                         <button
                           type="button"
-                          class="btn btn-sfondo btn-outline-secondary border-top-0 text-light w-50 h-50 d-md-none text-center"
+                          id="seguiti-button"
+                          class="rounded d-md-none"
+                        
                         >
                           Seguiti
                         </button>
                         <button
-                          type="button"
-                          class="btn btn-sfondo btn-outline-light border-2 text-light w-50 h-50 p-0 ms-3 mt-1 d-none d-md-inline"
+                          
+                          id="following"
+                          class="btn border border-3 border-light ms-4 d-none d-md-flex"
                         >
+                        
                           FOLLOWING
                         </button>
                         <!--questo button è da stilare-->
                         <p
-                          class="d-flex align-items-end justify-content-center ps-3 pb-3 d-md-none"
+                          class="d-flex align-items-center justify-content-center mb-0 d-md-none ms-5"
                         >
                           <i
-                            class="bi bi-three-dots-vertical text-light h3 pt-1"
+                            class="bi bi-three-dots-vertical text-light h1 mb-0"
                           ></i>
                         </p>
-                        <p class="d-none d-md-flex ps-4">
+                        <p class="d-none d-md-flex align-items-baseline ms-4">
                           <i class="bi bi-three-dots text-secondary h2"></i>
                         </p>
                       </div>
@@ -429,41 +433,34 @@
                         <p>
                           <i class="bi bi-shuffle text-success pe-3 h1"></i>
                         </p>
-                        <p>
-                          <i class="bi bi-play-circle-fill text-success h1"></i>
+                        <p >
+                          <i class="bi bi-play-circle-fill text-success"></i>
                         </p>
                       </div>
                     </div>
 
-                    <div class="row d-flex d-md-none">
-                      <div class="col col-3">
+                    <div class="row d-flex d-md-none align-items-center">
+                      <div
+                      class="col col-9 d-flex justify-content-center mt-4"
+                    >
                         <!--Qui l'immagine cambia con JS e la dimensione dell'icona va settata con CSS-->
                         <img
                           src="https://i.scdn.co/image/ab6761610000e5eb3d66c8edfe99c00a8ef9aeca"
-                          class="rounded-circle mt-4"
+                          class="rounded-circle"
                           style="height: 80px; width: 80px"
                           alt="artist"
-                        />
-                        <span
-                          class="rounded-circle border border-2 border-light bg-success position-relative"
-                          style="bottom: 25px; left: 60px"
-                        >
-                          <i class="fa-solid fa-heart p-1"></i
-                        ></span>
-                      </div>
-                      <div
-                        class="col col-9 d-flex flex-column justify-content-center mt-4"
-                      >
-                        <h6 class="text-light">Brani che ti piacciono</h6>
-                        <p class="text-light">10 brani di Verdena</p>
+                        /> <span class="h-50 rounded-circle px-1 border border-2 border-light bg-success align-self-end position-relative" style="right:20px"><i class="bi bi-heart-fill align-middle"></i></span>
+<span class="d-flex flex-column justify-content-center">
+                        <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6>
+                        <p class="mb-0 ps-2 text-secondary">10 brani di Verdena</p></span>
                       </div>
                     </div>
                     <div class="row mt-3">
                       <div class="col col-12 col-md-6">
-                        <h6 class="text-light d-md-none">Popolari</h6>
-                        <h3 class="d-none d-md-block text-light pb-4 pt-2">
+                        <h6 class="text-light d-md-none fw-bold">Popolari</h6>
+                        <h4 class="d-none d-md-block text-light fw-bold pb-4 pt-2">
                           Popolari
-                        </h3>
+                        </h4>
                         <div class="col">
                           <div class="row pt-2">
                             <div
@@ -491,12 +488,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text "
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -506,7 +503,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -535,12 +532,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -550,7 +547,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -579,12 +576,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -594,7 +591,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -605,7 +602,7 @@
 
                     <div class="row my-3 d-md-none">
                       <div
-                        class="col col-12 col-md-6 bg-secondary d-flex rounded"
+                        class="col col-12 col-md-6 bg-dark d-flex rounded "
                       >
                         <img
                           src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
@@ -614,14 +611,14 @@
                           style="height: 30px; width: 30px"
                         />
                         <!--qui in JS carica la copertina dell'album, stile da aggiungere in css-->
-                        <p
-                          class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0"
+                        <small
+                          class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0 "
                         >
                           Whatever, a song
-                        </p>
+                    </small>
                         <span class="d-flex ps-4 align-items-center"
                           ><p class="px-3 mb-0">
-                            <i class="bi bi-laptop text-light h2"></i>
+                            <i class="bi bi-laptop text-secondary h2"></i>
                           </p>
                           <p class="pe-3 mb-0">
                             <i class="bi bi-heart text-light"></i>
@@ -656,11 +653,11 @@
                         <span
                           class="d-none d-md-flex justify-content-end align-items-center"
                           ><p
-                            class="text-secondary d-none d-md-block ms-5 mb-0"
+                            class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                           >
                             54.54.0654
                           </p>
-                          <p class="text-secondary d-none d-md-block mb-0 ms-5">
+                          <p class="text-secondary d-none d-md-block mb-0 ms-4 small-text">
                             3.45
                           </p></span
                         >
@@ -668,7 +665,7 @@
                         <p
                           class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                         >
-                          <i class="bi bi-three-dots-vertical text-light"></i>
+                          <i class="bi bi-three-dots-vertical text-secondary h3"></i>
                         </p>
                       </div>
                     </div>
@@ -697,11 +694,11 @@
                         <span
                           class="d-none d-md-flex justify-content-end align-items-center"
                           ><p
-                            class="text-secondary d-none d-md-block ms-5 mb-0"
+                            class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                           >
                             54.54.0654
                           </p>
-                          <p class="text-secondary d-none d-md-block mb-0 ms-5">
+                          <p class="text-secondary d-none d-md-block mb-0 ms-4 small-text">
                             3.45
                           </p></span
                         >
@@ -709,7 +706,7 @@
                         <p
                           class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                         >
-                          <i class="bi bi-three-dots-vertical text-light"></i>
+                          <i class="bi bi-three-dots-vertical text-secondary h3"></i>
                         </p>
                       </div>
                     </div>
@@ -722,19 +719,23 @@
                   <div
                     class="col col-md-5 d-none d-md-flex flex-column px-0 mt-5 pt-5"
                   >
-                    <h3 class="text-light fw-bold mt-2">
+                    <h4 class="text-light fw-bold  pb-3">
                       Brani che ti piacciono
-                    </h3>
-                    <span class="d-flex pt-2"
+                    </h4>
+                    <span class="d-flex"
                       ><img
                         src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
-                        class="rounded-circle mt-4"
+                        class="rounded-circle"
                         style="height: 70px; width: 70px"
-                    /></span>
-                    <p class="fw-bold text-light ps-3 mt-4 pt-2">
+                    />
+                    <span class="h-25 rounded-circle px-1 border border-2 border-light bg-success align-self-end position-relative d-lg-none" style="right:20px;bottom:15px;"><i class="bi bi-heart-fill align-middle"></i></span>
+                    <span class="h-25 w-25 rounded-circle border border-2 border-light bg-success align-self-end position-relative d-md-none d-lg-flex" style="right:25px; bottom:20px;"><i class="bi bi-heart-fill ps-2"></i></span>
+                    
+                    
+                    <small class="fw-bold text-light ps-3 pt-2">
                       Hai messo Mi piace a 15 brani
-                      <span class="text-secondary ps-5"><br />di Verdena</span>
-                    </p>
+                      <span class="text-secondary ps-5 small-text"><br />di Verdena</span>
+                    </small>
                     <!--cambia con JS-->
                   </div>
                 </div>
