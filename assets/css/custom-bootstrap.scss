@@ -1,5 +1,5 @@
-@import './BootstrapSCSS/functions';
-@import './BootstrapSCSS/variables';
+@import '../BootstrapSCSS/functions';
+@import '../BootstrapSCSS/variables';
 
 $new-theme: (
   'success': #1fd65e,
@@ -9,7 +9,7 @@ $new-theme: (
 
 $theme-colors: map-merge($theme-colors, $new-theme);
 
-@import './BootstrapSCSS/bootstrap.scss';
+@import '../BootstrapSCSS/bootstrap.scss';
 
 // ICONE ALBUM
 
@@ -55,4 +55,14 @@ body {
 
 .small-text {
   font-size: 0.7rem !important;
+}
+
+.like {
+  background: rgb(0, 79, 177);
+  background: linear-gradient(
+    143deg,
+    rgba(0, 79, 177, 1) 0%,
+    rgba(93, 149, 182, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }

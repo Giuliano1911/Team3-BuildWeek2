@@ -12095,4 +12095,9 @@ body {
 
 .small-text {
   font-size: 0.7rem !important;
+}
+
+.like {
+  background: rgb(0, 79, 177);
+  background: linear-gradient(143deg, rgb(0, 79, 177) 0%, rgb(93, 149, 182) 50%, rgb(255, 255, 255) 100%);
 }/*# sourceMappingURL=custom-bootstrap.css.map */
