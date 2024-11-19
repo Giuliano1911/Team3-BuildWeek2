@@ -14,7 +14,7 @@ for (let i = 0; i < heartIcons.length; i++) {
   })
 }
 
-const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/14880539'
+const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/78630952'
 const addressBarContent = new URLSearchParams(window.location.search)
 const id = addressBarContent.get('id')
 
@@ -23,6 +23,7 @@ const albumDivSm = document.getElementById('album-top-sm')
 const albumRowSM = document.getElementById('album-row-sm')
 const albumData = document.getElementById('album-data')
 const recommended = document.getElementById('recommended')
+const background = document.getElementById('background')
 let bandName = ''
 let url2 = ''
 
@@ -42,7 +43,7 @@ fetch(url + id)
     const albumMinutes = Math.floor(album.duration / 60)
     const albumSeconds = album.duration - albumMinutes * 60
 
-    albumDivMd.innerHTML = `<img src='${album.cover}'>
+    albumDivMd.innerHTML = `<img id="img" style="width:150px;height:150px" crossorigin='anonymous' src='${album.cover_big}' onload="start()">
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h6 class="small-text">ALBUM</h6>
@@ -58,7 +59,7 @@ fetch(url + id)
     </div>
     </div>
     `
-    albumDivSm.innerHTML = `<img id="img" crossorigin='anonymous' src=${album.cover_big} onload="start()" sotto class="mx-auto w-50"> 
+    albumDivSm.innerHTML = `<img crossorigin='anonymous' src=${album.cover_big}  class="mx-auto w-50"> 
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h2 class="fw-bold mt-3">${album.title}</h2>
@@ -134,9 +135,21 @@ const createRecommended = function () {
       recommended.appendChild(newDiv)
       for (let i = 0; i < 3; i++) {
         const newCol = document.createElement('div')
-        // continua da qui
-        newCol.classList.add('col', 'col-8', 'col-md-4')
-        recommended
+        newCol.classList.add('col', 'col-8', 'col-sm-6', 'col-md-4', 'mt-3')
+        newCol.innerHTML = `
+        <div class="card bg-sfondo text-white">
+           <img role="button" onclick="window.location.replace('album.html?id=${
+             songs.data[i + i].album.id
+           }')" src="${
+          songs.data[i + i].album.cover_big
+        }" class="card-img-top" alt="cover album">
+           <div class="card-body">
+               <h5 role="button" onclick="window.location.replace('album.html?id=${
+                 songs.data[i + i].album.id
+               }')" class="card-title">${songs.data[i + i].album.title}</h5>
+            </div>
+        </div>`
+        recommended.appendChild(newCol)
       }
     })
     .catch((err) => {
@@ -219,6 +232,7 @@ const start = function () {
   // se necessario, aggiunge degli '0' per rendere il risultato un valido colore esadecimale
   let mostRecurrentHex = pad(mostRecurrent)
 
+  background.style.backgroundColor = `${'#' + mostRecurrentHex}`
   // console.log del risultato
   console.log(mostRecurrentHex)
 }
