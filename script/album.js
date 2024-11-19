@@ -14,13 +14,14 @@ for (let i = 0; i < heartIcons.length; i++) {
   })
 }
 
-const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/78630952'
+const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/14880539'
 const addressBarContent = new URLSearchParams(window.location.search)
 const id = addressBarContent.get('id')
 
 const albumDivMd = document.getElementById('album-top-md')
 const albumDivSm = document.getElementById('album-top-sm')
 const albumRowSM = document.getElementById('album-row-sm')
+const albumData = document.getElementById('album-data')
 const recommended = document.getElementById('recommended')
 let bandName = ''
 let url2 = ''
@@ -57,8 +58,7 @@ fetch(url + id)
     </div>
     </div>
     `
-    // onload="start()" sotto
-    albumDivSm.innerHTML = `<img id="img" crossorigin='anonymous' src=${album.cover_big} class="mx-auto w-50"> 
+    albumDivSm.innerHTML = `<img id="img" crossorigin='anonymous' src=${album.cover_big} onload="start()" sotto class="mx-auto w-50"> 
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h2 class="fw-bold mt-3">${album.title}</h2>
@@ -103,6 +103,12 @@ fetch(url + id)
       </div>`
       albumRowSM.appendChild(newRow)
     }
+    const albumDate = new Date(album.release_date).toLocaleDateString('en-us', {
+      year: 'numeric',
+      month: 'short',
+    })
+    albumData.innerHTML = `<p class="mb-0">${albumDate}</p>
+    <p class="small-text">©${album.label}</p>`
     url2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${bandName}`
     createRecommended()
   })
@@ -120,11 +126,16 @@ const createRecommended = function () {
         throw new Error('No ok')
       }
     })
-    .then((data) => {
-      console.log(data)
+    .then((songs) => {
+      console.log(songs)
       const newDiv = document.createElement('div')
-      newDiv.innerHTML = ``
+      newDiv.innerHTML = `
+      <a class="link-ligth link-underline-opacity-0 link-underline-light text-white link-underline-opacity-100-hover" href="./artista.html?id=${songs.data[0].artist.id}"><p>Altro da ${bandName}</p></a>`
+      recommended.appendChild(newDiv)
       for (let i = 0; i < 3; i++) {
+        const newCol = document.createElement('div')
+        // continua da qui
+        newCol.classList.add('col', 'col-8', 'col-md-4')
         recommended
       }
     })
