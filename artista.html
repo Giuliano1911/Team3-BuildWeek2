@@ -15,9 +15,8 @@
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
   </head>
   <body class="bg-sfondo">
-    <!--gli stili sono da trasportare in css-->
     <main>
-      <!-- contaier  -->
+      <!-- container  -->
       <div class="flex-md-row container-fluid">
         <!-- row  -->
         <div class="row justify-content-between">
@@ -309,6 +308,7 @@
             <section>
               <div
                 class="container-fluid h-50"
+                id="header-picture"
                 style="
                   background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg');
                   background-size: cover;
@@ -376,7 +376,7 @@
                           <h5
                             class="d-none d-md-block text-ligh pb-2 text-light"
                           >
-                            1.000.000 ascoltatori mensili
+                            1.254.845 ascoltatori mensili
                           </h5>
                         </div>
                       </div>
@@ -391,7 +391,7 @@
                   <div class="col-md-7">
                     <div class="col col-12">
                       <p class="text-secondary pt-3 d-md-none">
-                        1.000.000 ascoltatori mensili
+                        1.254.845 ascoltatori mensili
                       </p>
                     </div>
                     <div class="row pt-4">
@@ -443,12 +443,13 @@
                       <div
                       class="col col-9 d-flex justify-content-center mt-4"
                     >
-                        <!--Qui l'immagine cambia con JS e la dimensione dell'icona va settata con CSS-->
+                        <!--Qui l'immagine cambia con JS-->
                         <img
                           src="https://i.scdn.co/image/ab6761610000e5eb3d66c8edfe99c00a8ef9aeca"
                           class="rounded-circle"
                           style="height: 80px; width: 80px"
                           alt="artist"
+                          id="artist-icon"
                         /> <span class=" cerchio  px-1 border border-2 border-light bg-success position-relative " style="right:20px;top:50px"><i class="bi bi-heart-fill fa-xs" ></i></span>
 <span class="d-flex flex-column justify-content-center">
                         <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6>
@@ -473,11 +474,11 @@
                                   1
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -517,11 +518,11 @@
                                   2
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -561,11 +562,11 @@
                                   3
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -609,8 +610,8 @@
                           alt="icona-copertina-album"
                           class="rounded-circle my-1"
                           style="height: 30px; width: 30px"
+                          class="album-picture"
                         />
-                        <!--qui in JS carica la copertina dell'album, stile da aggiungere in css-->
                         <small
                           class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0 "
                         >
@@ -637,11 +638,11 @@
                             4
                           </h6></span
                         >
-                        <!--stile da aggiungere in CSS-->
                         <span class="pe-3"
                           ><img
                             src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                             style="height: 70px; width: 70px"
+                            class="album-picture"
                         /></span>
                         <span
                           class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -678,11 +679,11 @@
                             5
                           </h6></span
                         >
-                        <!--stile da aggiungere in CSS-->
                         <span class="pe-3"
                           ><img
                             src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                             style="height: 70px; width: 70px"
+                            class="album-picture"
                         /></span>
                         <span
                           class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -727,6 +728,7 @@
                         src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                         class="rounded-circle"
                         style="height: 70px; width: 70px"
+                        class="album-picture"
                     />
                     <span class="cerchio px-1 border border-2 border-light bg-success align-self-end position-relative d-lg-none" style="right:20px;bottom:15px;"><i class="bi bi-heart-fill fa-xs"></i></span>
                     <span class="cerchio border border-2 border-light px-1 pt-1 bg-success align-self-end position-relative d-md-none d-lg-flex" style="right:25px; "><i class="bi bi-heart-fill  fa-xs"></i></span>
