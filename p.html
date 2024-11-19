@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Spotify Italia - Home</title>
+
+    <!-- Link al CSS di Bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Icone di Font Awesome (per esempio, per l'icona di logout e altre icone) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./homepage.css" />
+
+    <!-- Aggiungi un po' di stile personalizzato -->
+    <style>
+      .hero {
+        background: url('https://www.example.com/spotify-hero-image.jpg')
+          no-repeat center center;
+        background-size: cover;
+        color: white;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+      }
+
+      .hero-button {
+        font-size: 1.2rem;
+        padding: 10px 25px;
+        margin-top: 20px;
+      }
+
+      footer {
+        background-color: #121212;
+        color: white;
+        padding: 20px;
+      }
+
+      .sidebar {
+        background-color: #121212;
+        color: white;
+        height: 100vh;
+        padding-top: 20px;
+      }
+
+      .sidebar .nav-link {
+        color: white;
+        padding: 10px 20px;
+      }
+
+      .sidebar .nav-link:hover {
+        background-color: #1db954;
+      }
+
+      .main-content {
+        padding-left: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Barra di Navigazione -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Spotify_logo_with_text.svg"
+            alt="Spotify"
+            width="120"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Ciao, Utente</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">La tua Libreria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Esci</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar (menu laterale per l'utente autenticato) -->
+    <div class="sidebar d-none d-lg-block position-fixed">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cerca</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">La tua Libreria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Playlist</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Podcast</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contenuto Principale -->
+    <div class="main-content">
+      <!-- Sezione Hero (per utenti autenticati) -->
+      <section class="hero">
+        <div>
+          <h1>Benvenuto su Spotify!</h1>
+          <p>
+            Scopri milioni di canzoni, playlist e podcast, in qualsiasi momento
+            e ovunque.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sezione Playlist Personalizzate -->
+      <section class="container py-5">
+        <h2 class="text-center mb-4">Le tue Playlist</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x200"
+                class="card-img-top"
+                alt="Playlist 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Playlist del Giorno</h5>
+                <p class="card-text">
+                  Una selezione di brani basata sui tuoi gusti.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x200"
+                class="card-img-top"
+                alt="Playlist 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Musica Relax</h5>
+                <p class="card-text">Ascolta le tracce più rilassanti.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/350x200"
+                class="card-img-top"
+                alt="Playlist 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Top 50 Italia</h5>
+                <p class="card-text">Le canzoni più popolari in Italia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2024 Spotify Italia. Tutti i diritti riservati.</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#" class="text-light me-3">Privacy</a>
+            <a href="#" class="text-light me-3">Termini</a>
+            <a href="#" class="text-light">Cookie</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script di Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
