@@ -36,6 +36,7 @@ fetch(url + id)
     const releaseDate = new Date(album.release_date).getFullYear()
     const albumMinutes = Math.floor(album.duration / 60)
     const albumSeconds = album.duration - albumMinutes * 60
+
     albumDivMd.innerHTML = `<img id="img" src='${album.cover}' onload=start()>
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
@@ -165,7 +166,6 @@ const pad = function (hex) {
 const start = function () {
   // prendo il riferimento all'immagine del dom
   let imgReference = document.querySelector('#img')
-
   // creo il context 2d dell'immagine selezionata
   let context = draw(imgReference)
 
