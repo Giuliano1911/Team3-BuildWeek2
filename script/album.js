@@ -1,6 +1,6 @@
 // ICONA (SALVA) DA CUORE VUOTO A -> CUORE PIENO VERDE  I
 
-const heartIcon = document.getElementById('heart')
+const heartIcon = document.getElementsByClassName('heart')
 
 heartIcon.addEventListener('click', function () {
   if (this.classList.contains('bi-heart', 'text-white')) {
