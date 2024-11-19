@@ -8,16 +8,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" />
+      <link rel="stylesheet" href="./assets/css/artisti.css">
+    
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
   </head>
   <body class="bg-sfondo">
-    <!--gli stili sono da trasportare in css-->
     <main>
-      <!-- contaier  -->
+      <!-- container  -->
       <div class="flex-md-row container-fluid">
         <!-- row  -->
         <div class="row justify-content-between">
@@ -308,7 +307,8 @@
           >
             <section>
               <div
-                class="container-fluid"
+                class="container-fluid h-50"
+                id="header-picture"
                 style="
                   background-image: url('https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg');
                   background-size: cover;
@@ -323,7 +323,7 @@
                     <div class="row pt-2 d-md-none">
                       <div class="col col-6 d-md-none d-flex">
                         <!--display none da tablet in su-->
-                        <p id="time" class="text-light pe-2">22:22</p>
+                        <p id="time" class="text-light pe-2 mb-0">22:22</p>
                         <!--Qui possiamo inserire dinamicamente l'ora con JS-->
                         <p><i class="bi bi-moon text-light pe-2"></i></p>
                         <p><i class="bi bi-instagram text-light pe-2"></i></p>
@@ -341,18 +341,19 @@
                       </div>
                     </div>
                     <div class="row d-flex flex-column">
-                      <div class="col col-12 position-relative d-flex pt-3">
+                      <div class="col col-12 position-relative d-flex">
                         <div class="row d-md-flex">
-                          <p>
+                          <p class="d-flex mt-3">
                             <span
                               ><i
-                                class="bi bi-chevron-left d-none d-md-inline text-light h1"
+                                class="bi bi-chevron-left d-none d-md-inline text-light h2"
                               ></i></span
                             ><span
                               ><i
-                                class="bi bi-chevron-right d-none d-md-inline text-secondary ps-3 h1"
+                                class="bi bi-chevron-right d-none d-md-inline text-secondary ps-3 h2 "
                               ></i
                             ></span>
+                            <span class="d-none d-md-flex"><img src="https://www.vaticano.com/wp-content/uploads/2020/06/sacro-cuore-di-Ges%C3%B9.jpg" alt="profile-pic" style="height:50px; width:50px;border-radius:50%;object-fit: cover; margin-left:300px"/><small class="d-flex text-light ps-4 align-self-center fw-bold">Jesus...</small><i class="fa-solid fa-sort-down text-light ps-2 align-self-center fw-bold"></i></span>
                           </p>
                           <p>
                             <i
@@ -362,7 +363,7 @@
                           <div class="row d-none d-md-flex">
                             <div class="col">
                               <p class="d-none d-md-inline mb-0 mt-5">
-                                <i class="fa-solid fa-certificate h1 pe-2"></i>
+                                <i class="bi bi-patch-check-fill h1 pe-2 text-info"></i>
                               </p>
                               <p class="d-md-inline text-light">
                                 Artista verificato
@@ -370,13 +371,13 @@
                             </div>
                           </div>
 
-                          <h1 class="text-light mt-5 mt-md-0 pt-md-0">
+                          <h1 class="text-light mt-5 mt-md-0 pt-md-0 fw-bold">
                             NOME ARTISTAAAAAAAAAAAA
                           </h1>
                           <h5
                             class="d-none d-md-block text-ligh pb-2 text-light"
                           >
-                            1.000.000 ascoltatori mensili
+                            1.254.845 ascoltatori mensili
                           </h5>
                         </div>
                       </div>
@@ -391,35 +392,39 @@
                   <div class="col-md-7">
                     <div class="col col-12">
                       <p class="text-secondary pt-3 d-md-none">
-                        1.000.000 ascoltatori mensili
+                        1.254.845 ascoltatori mensili
                       </p>
                     </div>
-                    <div class="row pt-4 align-items-center">
-                      <div class="col col-6 d-flex">
+                    <div class="row pt-4">
+                      <div class="col col-6 d-flex ">
                         <p class="d-none d-md-inline">
-                          <i class="bi bi-play-circle-fill text-success h1"></i>
+                          <i class="bi bi-play-circle-fill text-success h1" ></i>
                         </p>
                         <button
                           type="button"
-                          class="btn btn-sfondo btn-outline-secondary border-top-0 text-light w-50 h-50 d-md-none text-center"
+                          id="seguiti-button"
+                          class="rounded d-md-none"
+                        
                         >
                           Seguiti
                         </button>
                         <button
-                          type="button"
-                          class="btn btn-sfondo btn-outline-light border-2 text-light w-50 h-50 p-0 ms-3 mt-1 d-none d-md-inline"
+                          
+                          id="following"
+                          class="btn border border-3 border-light ms-4 d-none d-md-flex"
                         >
+                        
                           FOLLOWING
                         </button>
                         <!--questo button è da stilare-->
                         <p
-                          class="d-flex align-items-end justify-content-center ps-3 pb-3 d-md-none"
+                          class="d-flex align-items-center justify-content-center mb-0 d-md-none ms-5"
                         >
                           <i
-                            class="bi bi-three-dots-vertical text-light h3 pt-1"
+                            class="bi bi-three-dots-vertical text-light h1 mb-0"
                           ></i>
                         </p>
-                        <p class="d-none d-md-flex ps-4">
+                        <p class="d-none d-md-flex align-items-baseline ms-4">
                           <i class="bi bi-three-dots text-secondary h2"></i>
                         </p>
                       </div>
@@ -429,41 +434,35 @@
                         <p>
                           <i class="bi bi-shuffle text-success pe-3 h1"></i>
                         </p>
-                        <p>
-                          <i class="bi bi-play-circle-fill text-success h1"></i>
+                        <p >
+                          <i class="bi bi-play-circle-fill text-success"></i>
                         </p>
                       </div>
                     </div>
 
-                    <div class="row d-flex d-md-none">
-                      <div class="col col-3">
-                        <!--Qui l'immagine cambia con JS e la dimensione dell'icona va settata con CSS-->
+                    <div class="row d-flex d-md-none align-items-center">
+                      <div
+                      class="col col-9 d-flex justify-content-center mt-4"
+                    >
+                        <!--Qui l'immagine cambia con JS-->
                         <img
                           src="https://i.scdn.co/image/ab6761610000e5eb3d66c8edfe99c00a8ef9aeca"
-                          class="rounded-circle mt-4"
+                          class="rounded-circle"
                           style="height: 80px; width: 80px"
                           alt="artist"
-                        />
-                        <span
-                          class="rounded-circle border border-2 border-light bg-success position-relative"
-                          style="bottom: 25px; left: 60px"
-                        >
-                          <i class="fa-solid fa-heart p-1"></i
-                        ></span>
-                      </div>
-                      <div
-                        class="col col-9 d-flex flex-column justify-content-center mt-4"
-                      >
-                        <h6 class="text-light">Brani che ti piacciono</h6>
-                        <p class="text-light">10 brani di Verdena</p>
+                          id="artist-icon"
+                        /> <span class=" cerchio  px-1 border border-2 border-light bg-success position-relative " style="right:20px;top:50px"><i class="bi bi-heart-fill fa-xs" ></i></span>
+<span class="d-flex flex-column justify-content-center">
+                        <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6>
+                        <p class="mb-0 ps-2 text-secondary">10 brani di Verdena</p></span>
                       </div>
                     </div>
                     <div class="row mt-3">
                       <div class="col col-12 col-md-6">
-                        <h6 class="text-light d-md-none">Popolari</h6>
-                        <h3 class="d-none d-md-block text-light pb-4 pt-2">
+                        <h6 class="text-light d-md-none fw-bold">Popolari</h6>
+                        <h4 class="d-none d-md-block text-light fw-bold pb-4 pt-2">
                           Popolari
-                        </h3>
+                        </h4>
                         <div class="col">
                           <div class="row pt-2">
                             <div
@@ -476,11 +475,11 @@
                                   1
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -491,12 +490,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text "
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -506,7 +505,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -520,11 +519,11 @@
                                   2
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -535,12 +534,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -550,7 +549,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -564,11 +563,11 @@
                                   3
                                 </h6></span
                               >
-                              <!--stile da aggiungere in CSS-->
                               <span class="pe-3"
                                 ><img
                                   src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                                   style="height: 70px; width: 70px"
+                                  class="album-picture"
                               /></span>
                               <span
                                 class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -579,12 +578,12 @@
                               >
                               <span class="d-none d-md-flex justify-content-end"
                                 ><p
-                                  class="text-secondary d-none d-md-block ms-5 mb-0"
+                                  class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                                 >
                                   54.54.0654
                                 </p>
                                 <p
-                                  class="text-secondary d-none d-md-block mb-0 ms-5"
+                                  class="text-secondary d-none d-md-block mb-0 ms-4 small-text"
                                 >
                                   3.45
                                 </p></span
@@ -594,7 +593,7 @@
                                 class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                               >
                                 <i
-                                  class="bi bi-three-dots-vertical text-light"
+                                  class="bi bi-three-dots-vertical text-secondary h3"
                                 ></i>
                               </p>
                             </div>
@@ -605,23 +604,23 @@
 
                     <div class="row my-3 d-md-none">
                       <div
-                        class="col col-12 col-md-6 bg-secondary d-flex rounded"
+                        class="col col-12 col-md-6 bg-dark d-flex rounded "
                       >
                         <img
                           src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                           alt="icona-copertina-album"
                           class="rounded-circle my-1"
                           style="height: 30px; width: 30px"
+                          class="album-picture"
                         />
-                        <!--qui in JS carica la copertina dell'album, stile da aggiungere in css-->
-                        <p
-                          class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0"
+                        <small
+                          class="text-light fw-bold justify-self-start align-self-center ps-3 pe-5 mb-0 "
                         >
                           Whatever, a song
-                        </p>
+                    </small>
                         <span class="d-flex ps-4 align-items-center"
                           ><p class="px-3 mb-0">
-                            <i class="bi bi-laptop text-light h2"></i>
+                            <i class="bi bi-laptop text-secondary h2"></i>
                           </p>
                           <p class="pe-3 mb-0">
                             <i class="bi bi-heart text-light"></i>
@@ -631,7 +630,7 @@
                         ></span>
                       </div>
                     </div>
-                    <div class="row pt-4">
+                    <div class="row">
                       <div
                         class="col col-12 col-md-6 d-flex position-relative justify-content-md-between"
                       >
@@ -640,11 +639,11 @@
                             4
                           </h6></span
                         >
-                        <!--stile da aggiungere in CSS-->
                         <span class="pe-3"
                           ><img
                             src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                             style="height: 70px; width: 70px"
+                            class="album-picture"
                         /></span>
                         <span
                           class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -656,11 +655,11 @@
                         <span
                           class="d-none d-md-flex justify-content-end align-items-center"
                           ><p
-                            class="text-secondary d-none d-md-block ms-5 mb-0"
+                            class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                           >
                             54.54.0654
                           </p>
-                          <p class="text-secondary d-none d-md-block mb-0 ms-5">
+                          <p class="text-secondary d-none d-md-block mb-0 ms-4 small-text">
                             3.45
                           </p></span
                         >
@@ -668,7 +667,7 @@
                         <p
                           class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                         >
-                          <i class="bi bi-three-dots-vertical text-light"></i>
+                          <i class="bi bi-three-dots-vertical text-secondary h3"></i>
                         </p>
                       </div>
                     </div>
@@ -681,11 +680,11 @@
                             5
                           </h6></span
                         >
-                        <!--stile da aggiungere in CSS-->
                         <span class="pe-3"
                           ><img
                             src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
                             style="height: 70px; width: 70px"
+                            class="album-picture"
                         /></span>
                         <span
                           class="align-self-center d-sm-flex d-md-block flex-sm-column"
@@ -697,11 +696,11 @@
                         <span
                           class="d-none d-md-flex justify-content-end align-items-center"
                           ><p
-                            class="text-secondary d-none d-md-block ms-5 mb-0"
+                            class="text-secondary d-none d-md-block ms-4 mb-0 small-text"
                           >
                             54.54.0654
                           </p>
-                          <p class="text-secondary d-none d-md-block mb-0 ms-5">
+                          <p class="text-secondary d-none d-md-block mb-0 ms-4 small-text">
                             3.45
                           </p></span
                         >
@@ -709,32 +708,37 @@
                         <p
                           class="position-absolute top-50 end-0 translate-middle-y pe-3 d-md-none"
                         >
-                          <i class="bi bi-three-dots-vertical text-light"></i>
+                          <i class="bi bi-three-dots-vertical text-secondary h3"></i>
                         </p>
                       </div>
                     </div>
                     <div class="row d-none d-md-flex">
                       <div class="col">
-                        <h5 class="text-light my-5">VISUALIZZA ALTRO</h5>
+                        <h5 class="text-light my-5 fw-bold">VISUALIZZA ALTRO</h5>
                       </div>
                     </div>
                   </div>
                   <div
                     class="col col-md-5 d-none d-md-flex flex-column px-0 mt-5 pt-5"
                   >
-                    <h3 class="text-light fw-bold mt-2">
+                    <h4 class="text-light fw-bold  pb-3">
                       Brani che ti piacciono
-                    </h3>
-                    <span class="d-flex pt-2"
+                    </h4>
+                    <span class="d-flex"
                       ><img
                         src="https://rumoremag.com/wp-content/uploads/2022/09/verdena_album.jpg"
-                        class="rounded-circle mt-4"
+                        class="rounded-circle"
                         style="height: 70px; width: 70px"
-                    /></span>
-                    <p class="fw-bold text-light ps-3 mt-4 pt-2">
+                        class="album-picture"
+                    />
+                    <span class="cerchio px-1 border border-2 border-light bg-success align-self-end position-relative d-lg-none" style="right:20px;bottom:15px;"><i class="bi bi-heart-fill fa-xs"></i></span>
+                    <span class="cerchio border border-2 border-light px-1 pt-1 bg-success align-self-end position-relative d-md-none d-lg-flex" style="right:25px; "><i class="bi bi-heart-fill  fa-xs"></i></span>
+                    
+                    
+                    <small class="fw-bold text-light ps-3 pt-2">
                       Hai messo Mi piace a 15 brani
-                      <span class="text-secondary ps-5"><br />di Verdena</span>
-                    </p>
+                      <span class="text-secondary ps-5 small-text"><br />di Verdena</span>
+                    </small>
                     <!--cambia con JS-->
                   </div>
                 </div>
