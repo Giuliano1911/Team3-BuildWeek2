@@ -68,7 +68,7 @@ fetch(url + id)
     
     <div class="d-flex">
       
-    <p class="mb-0 ms-4 mt-3">${album.artist.contributors_fans}</p></a>
+    <p class="mb-0 ms-4 mt-3">${album.artist.contributors_fans} ascoltatori mensili</p></a>
     </div>
     `
     braniPrefe.innerHTML = `
