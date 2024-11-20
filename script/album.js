@@ -14,7 +14,7 @@ for (let i = 0; i < heartIcons.length; i++) {
   })
 }
 
-const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/78630952'
+const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/'
 const addressBarContent = new URLSearchParams(window.location.search)
 const id = addressBarContent.get('id')
 
@@ -137,7 +137,7 @@ const createRecommended = function () {
         const newCol = document.createElement('div')
         newCol.classList.add('col', 'col-8', 'col-sm-6', 'col-md-4', 'mt-3')
         newCol.innerHTML = `
-        <div class="card bg-sfondo text-white">
+        <div class="card bg-sfondo text-white h-100">
            <img role="button" onclick="window.location.replace('album.html?id=${
              songs.data[i * 3].album.id
            }')" src="${
