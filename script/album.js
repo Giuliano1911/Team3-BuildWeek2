@@ -133,20 +133,20 @@ const createRecommended = function () {
       newDiv.innerHTML = `
       <a class="link-ligth link-underline-opacity-0 link-underline-light text-white link-underline-opacity-100-hover" href="./artista.html?id=${songs.data[0].artist.id}"><p>Altro da ${bandName}</p></a>`
       recommended.appendChild(newDiv)
-      for (let i = 0; i < 3; i++) {
+      for (let i = 1; i < 4; i++) {
         const newCol = document.createElement('div')
         newCol.classList.add('col', 'col-8', 'col-sm-6', 'col-md-4', 'mt-3')
         newCol.innerHTML = `
         <div class="card bg-sfondo text-white">
            <img role="button" onclick="window.location.replace('album.html?id=${
-             songs.data[i + i].album.id
+             songs.data[i * 3].album.id
            }')" src="${
-          songs.data[i + i].album.cover_big
+          songs.data[i * 3].album.cover_big
         }" class="card-img-top" alt="cover album">
            <div class="card-body">
                <h5 role="button" onclick="window.location.replace('album.html?id=${
-                 songs.data[i + i].album.id
-               }')" class="card-title">${songs.data[i + i].album.title}</h5>
+                 songs.data[i * 3].album.id
+               }')" class="card-title">${songs.data[i * 3].album.title}</h5>
             </div>
         </div>`
         recommended.appendChild(newCol)
