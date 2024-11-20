@@ -209,7 +209,7 @@ fetch(url)
       <div class="d-flex align-items-center">
         <a href="#" class="text-decoration-none">
           <i
-            class="bi bi-pc-display text-decoration-none text-light opacity-50 pe-3 fs-4"
+            class="bi bi-speaker text-decoration-none text-light opacity-75 pe-3 fs-4"
           ></i>
         </a>
         <a href="#" class="text-decoration-none">
