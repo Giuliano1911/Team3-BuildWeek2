@@ -36,7 +36,7 @@
                 <i class="bi bi-three-dots text-light m-1 fs-5"></i>
               </a>
               <a
-                href="./search.html"
+                href="./homepage.html"
                 class="text-decoration-none text-light d-flex align-items-center mb-2"
               >
                 <i class="bi bi-house-door text-light m-1 me-3 fs-5"></i>
@@ -313,11 +313,19 @@
             <article class="col px-2" id="background">
               <section>
                 <!-- magic -->
-                <div id="album-top-sm" class="d-md-none text-white"></div>
+                <div id="album-top-sm" class="d-md-none text-white">
+                  <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
                 <div
                   id="album-top-md"
                   class="d-none d-md-block text-white mb-5"
-                ></div>
+                >
+                  <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
                 <div class="align-items-center d-none d-md-flex gap-4">
                   <a href="#">
                     <span
@@ -404,6 +412,10 @@
                 ></div>
               </div>
             </div>
+
+            <section class="container-fluid" style="margin-bottom: 80px">
+              <div class="row justify-content-center" id="other-albums"></div>
+            </section>
 
             <!-- footer  -->
             <div class="container d-none d-md-block small-text">

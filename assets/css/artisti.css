@@ -28,6 +28,16 @@
 #go-left {
   margin-left: -1rem !important;
 }
+
+#other-albums .card {
+  transition: transform 0.2s ease-in-out;
+}
+
+#other-albums .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgb(45, 45, 45) !important;
+}
 /* ID header-picture per immagine artista in alto */
 
 /* ID artist-icon per l'icona dell'artista */

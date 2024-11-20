@@ -23,6 +23,7 @@ const albumDivSm = document.getElementById('album-top-sm')
 const albumDivMd = document.getElementById('album-top-md')
 const braniPrefeSm = document.getElementById('brani-prefe-sm')
 const braniPrefeMd = document.getElementById('brani-prefe-md')
+const albums = document.getElementById('other-albums')
 let bandName = ''
 let url2 = ''
 
@@ -154,6 +155,27 @@ const createBrani = function () {
           <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
         </div>`
         recommended.appendChild(newRow)
+      }
+      const newh2 = document.createElement('div')
+      newh2.innerHTML = `<h2 class="text-white">Discografia</h2>`
+      albums.appendChild(newh2)
+      for (let i = 1; i < 4; i++) {
+        const newCol = document.createElement('div')
+        newCol.classList.add('col', 'col-8', 'col-sm-6', 'col-md-4', 'mt-3')
+        newCol.innerHTML = `
+        <div class="card bg-sfondo text-white h-100">
+           <img role="button" onclick="window.location.replace('album.html?id=${
+             songs.data[i * 3].album.id
+           }')" src="${
+          songs.data[i * 3].album.cover_big
+        }" class="card-img-top" alt="cover album">
+           <div class="card-body">
+               <h5 role="button" onclick="window.location.replace('album.html?id=${
+                 songs.data[i * 3].album.id
+               }')" class="card-title">${songs.data[i * 3].album.title}</h5>
+            </div>
+        </div>`
+        albums.appendChild(newCol)
       }
     })
     .catch((err) => {

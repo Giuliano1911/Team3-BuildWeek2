@@ -43,7 +43,7 @@ fetch(url + id)
     const albumMinutes = Math.floor(album.duration / 60)
     const albumSeconds = album.duration - albumMinutes * 60
 
-    albumDivMd.innerHTML = `<img id="img" style="width:150px;height:150px" crossorigin='anonymous' src='${album.cover_big}' onload="start()">
+    albumDivMd.innerHTML = `<img class="bg-color" style="width:150px;height:150px" crossorigin='anonymous' src='${album.cover_big}' onload="start()">
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h6 class="small-text">ALBUM</h6>
@@ -59,7 +59,7 @@ fetch(url + id)
     </div>
     </div>
     `
-    albumDivSm.innerHTML = `<img crossorigin='anonymous' src=${album.cover_big}  class="mx-auto w-50"> 
+    albumDivSm.innerHTML = `<img crossorigin='anonymous' src=${album.cover_big}  class="mx-auto w-50 bg-color"> 
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
     <h2 class="fw-bold mt-3">${album.title}</h2>
@@ -219,7 +219,13 @@ const pad = function (hex) {
 
 const start = function () {
   // prendo il riferimento all'immagine del dom
-  let imgReference = document.querySelector('#img')
+  let imgReferences = document.querySelectorAll('.bg-color')
+  let imgReference
+  if (window.innerWidth < 768) {
+    imgReference = imgReferences[0]
+  } else {
+    imgReference = imgReferences[1]
+  }
   // creo il context 2d dell'immagine selezionata
   let context = draw(imgReference)
 
@@ -232,7 +238,7 @@ const start = function () {
   // se necessario, aggiunge degli '0' per rendere il risultato un valido colore esadecimale
   let mostRecurrentHex = pad(mostRecurrent)
 
-  background.style.backgroundColor = `${'#' + mostRecurrentHex}`
+  background.style.background = `${'#' + mostRecurrentHex}`
   // console.log del risultato
   console.log(mostRecurrentHex)
 }

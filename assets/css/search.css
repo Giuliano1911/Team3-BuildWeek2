@@ -17,6 +17,7 @@ body {
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .category-card h3 {
