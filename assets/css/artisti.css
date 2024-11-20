@@ -1,30 +1,35 @@
-#seguiti-button{
-    background-color: #121212;
-    border:1px solid #121212;
-    color: white;
-    box-shadow: inset 200px 200px 300px 142px rgb(24 24 22);
-    padding: 5px 10px 5px 10px;
+#seguiti-button {
+  background-color: #121212;
+  border: 1px solid #121212;
+  color: white;
+  box-shadow: inset 200px 200px 300px 142px rgb(24 24 22);
+  padding: 5px 10px 5px 10px;
 }
 
-#following{
-    height:40px;
-    width:120px;
-    background-color: #121212;
-    border: 2px solid white;
-    color: white;
-    text-align: center;
-    
+#following {
+  height: 40px;
+  width: 120px;
+  background-color: #121212;
+  border: 2px solid white;
+  color: white;
+  text-align: center;
 }
-.cerchio{
-    height:25px;
-    width:25px;
-    border-radius: 50%;
-    object-fit:contain;
+.cerchio {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
+.pad {
+  padding-left: 0.05rem !important;
+}
+
+#go-left {
+  margin-left: -1rem !important;
+}
 /* ID header-picture per immagine artista in alto */
 
 /* ID artist-icon per l'icona dell'artista */
 
 /* CLASS album-picture per icona album di fianco alla canzone + icona a dx versione md e lg */
-

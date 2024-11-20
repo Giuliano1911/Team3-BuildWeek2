@@ -1,34 +1,162 @@
 //id header-picture per foto artista nell'header
 
 //provo con un artista per capire se funziona
-const url = "https://striveschool-api.herokuapp.com/api/deezer/artist/2"
 
-fetch(url)
+const shuffle = document.getElementById('shuffle')
+
+shuffle.addEventListener('click', function () {
+  if (shuffle.classList.contains('text-white')) {
+    shuffle.classList.remove('text-white')
+    shuffle.classList.add('text-success')
+  } else {
+    shuffle.classList.add('text-white')
+    shuffle.classList.remove('text-success')
+  }
+})
+
+const url = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
+
+const addressBarContent = new URLSearchParams(window.location.search)
+const id = addressBarContent.get('id')
+
+const albumDivSm = document.getElementById('album-top-sm')
+const albumDivMd = document.getElementById('album-top-md')
+const braniPrefeSm = document.getElementById('brani-prefe-sm')
+const braniPrefeMd = document.getElementById('brani-prefe-md')
+let bandName = ''
+let url2 = ''
+
+fetch(url + id)
+  .then((response) => {
+    console.log(response)
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw new Error('No ok')
+    }
+  })
+  .then((artist) => {
+    console.log(artist)
+    albumDivSm.innerHTML = `
+    <div class="d-flex align-items-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
+           <div class="d-md-none position-absolute top-0 start-0 ms-2 mt-3">
+                  <a href="./homepage.html" class="z-1"
+                    ><i class="bi bi-arrow-left text-white ms-2 rounded rounded-circle p-1 bg-secondary"></i
+                  ></a>
+                </div>    
+    <h1 class="fw-bold fa-3x mx-4">${artist.name}</h1>
+    </div>
+    
+    <div class="d-flex">
+      
+    <p class="mb-0 ms-2 mt-3">${artist.nb_fan} ascoltatori mensili</p>
+    </div>
+    `
+    braniPrefeSm.classList.add('d-md-none')
+    braniPrefeSm.innerHTML = `
+   <img src="${artist.picture_big}"
+        class="rounded-circle"
+        style="height: 60px; width: 60px"
+        alt="artist"/> 
+    <span class="cerchio px-1 border border-2 border-light bg-success position-relative 
+    "style="right:20px;top:40px"><i class="bi bi-heart-fill fa-xs pad" ></i></span>
+    <span class="d-flex flex-column justify-content-center">
+
+    <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6>
+    <p class="mb-0 ps-2 text-secondary">10 brani di ${artist.name} </p></span>
+    `
+    albumDivMd.innerHTML = `
+    
+    <div class="d-flex flex-column justify-content-end position-relative " style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
+    <div class="my-3 d-none d-md-block position-absolute top-0 start-0 ms-3">
+                  <a
+                    href="./homepage.html"
+                    class="rounded-circle bg-dark text-decoration-none text-light opacity-75 fs-5 p-1 me-3"
+                    ><i class="bi bi-chevron-left"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="rounded-circle bg-dark bg-opacity-50 text-decoration-none text-light opacity-50 fs-5 p-1"
+                    ><i class="bi bi-chevron-right"></i
+                  ></a>
+                </div>
+    <div class="d-flex gap-2 ms-4">
+    <i class="bi bi-patch-check-fill text-info fs-5"></i>
+    <p class=" mb-0 text-white small-text align-self-center">Artista verificato</p>    
+    </div>
+    <h1 class="fw-bold ms-4 big-text">${artist.name}</h1>
+        <p class="mb-4 ms-4 mt-3">${artist.nb_fan} ascoltatori mensili</p>
+    </div>
+    `
+    braniPrefeMd.innerHTML = `
+<div class="d-flex">
+   <img src="${artist.picture_big}"
+        class="rounded-circle"
+        style="height: 60px; width: 60px"
+        alt="artist"/> 
+        <span class="cerchio px-1 border border-2 border-black text-white bg-success position-relative 
+    "style="right:20px;top:40px"><i class="bi bi-heart-fill fa-xs pad" ></i></span>
+    <span class="d-flex flex-column">
+    <div id="go-left">
+    <h6 class="text-light mb-0 small">Brani che ti piacciono</h6>
+    
+    <p class="mb-0 text-secondary small">10 brani di ${artist.name} </p></span>
+    </div>
+    </div>
+    `
+    bandName = `${artist.name}`
+    url2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${bandName}`
+    createBrani()
+  })
+  .catch((err) => {
+    console.log('errore', err)
+  })
+
+//   funzione che genera i 10 top brani
+const createBrani = function () {
+  fetch(url2)
     .then((response) => {
-        console.log(response)
-        if (response.ok) {
-            return response.json()
-        } else {throw new Error ('errore')}
+      console.log(response)
+      if (response.ok) {
+        return response.json()
+      } else {
+        throw new Error('No ok')
+      }
     })
-
-    .then((artist) =>{
-        console.log(artist)
-
-        const artistPicHeader = document.getElementById('headerPicture')
-        artistPicHeader.innerHTML = `<div class="row"> <img id="picture" src="${artist.picture_medium}" class="p-0" style="width:100vw;z-index:1; object-fit:cover">
-         <h1 class=" ps-3 position-relative text-light fw-bold mb-0" style="z-index:2; bottom:45px"> ${artist.name}</h1> <small class="mb-0 ps-4 text-secondary position-relative" style="bottom:20px">${artist.nb_fan} ascoltatori mensili</small> 
-         </div>`
-        headerPicture.appendChild(artistPicHeader)
-
-//devo inserire i punti a nb_fan
-
-        const artistPicIcon = document.getElementById('artistIcon') //è la row
-        artistPicIcon.innerHTML = `<img src="${artist.picture_small}" class="rounded-circle" style="height: 80px; width: 80px" alt="artist" /> <span class="cerchio px-1 border border-2 border-light bg-success position-relative " style="right:20px;top:50px"><i class="bi bi-heart-fill fa-xs"></i></span> <span class="d-flex flex-column justify-content-center"> <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6> <p class="mb-0 ps-2 text-secondary">10 brani di ${artist.name}</p></span>
-        `
-    artistPicIcon.appendChild(artistPicIcon)
+    .then((songs) => {
+      console.log(songs)
+      for (let i = 0; i < 10; i++) {
+        const trackMinutes = Math.floor(songs.data[i].duration / 60)
+        let trackSeconds = songs.data[i].duration - trackMinutes * 60
+        trackSeconds < 10 ? (trackSeconds = '0' + trackSeconds) : trackSeconds
+        const newRow = document.createElement('div')
+        newRow.classList.add('d-flex', 'text-white', 'mt-3')
+        newRow.innerHTML = `
+        <div class="col col-11 col-md-7">
+        <div class="d-flex">
+          <p class="mb-0 me-3 mt-2">${i + 1}</p>
+          <img class="me-3" src="${
+            songs.data[i].album.cover_small
+          }" style="width:40px;height:40px">
+          <div>
+            <p class="mb-0">${songs.data[i].title}</p>
+            <a class="link-ligth link-underline-opacity-0 link-underline-light text-white link-underline-opacity-100-hover" href="./album.html?id=${
+              songs.data[i].album.id
+            }"><p class="mb-0">${songs.data[i].album.title}</p></a>
+          </div>
+        </div>
+        </div>
+        <div class="col col-3 d-none d-md-block text-end"><p class="d-none d-md-block mb-0 opacity-50">${
+          songs.data[i].rank
+        }</p></div>
+        <div class="col col-1 col-md-2 text-end">
+          <a href="#" class="text-white d-md-none"><i class="bi bi-three-dots-vertical"></i></a>
+          <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
+        </div>`
+        recommended.appendChild(newRow)
+      }
     })
-
-
     .catch((err) => {
-        console.log('errore', err)
-      })
+      console.log('errore', err)
+    })
+}

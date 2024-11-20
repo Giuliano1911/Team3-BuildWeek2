@@ -1,5 +1,4 @@
-const url =
-  'https://striveschool-api.herokuapp.com/api/deezer/search?q=ladygaga'
+const url = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=metal'
 
 fetch(url)
   .then((response) => {
