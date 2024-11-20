@@ -1,22 +1,4 @@
-// Mostro album e artisti in console
 const url = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ac/dc'
-
-fetch(url)
-  .then((response) => {
-    console.log(response)
-    if (response.ok) {
-      return response.json()
-    } else {
-      throw new Error('No ok')
-    }
-  })
-  .then((data) => {
-    console.log(data)
-    // Qui posso lavorare con il dato preso dal server
-  })
-  .catch((err) => {
-    console.log('errore', err)
-  })
 
 // BARRA DI RIPRODUZIONE
 // Elementi di sinistra
@@ -40,9 +22,6 @@ let total_duration = document.querySelector('.total-duration')
 // Traccia
 let curr_track = document.createElement('audio')
 
-const apiUrl =
-  'https://striveschool-api.herokuapp.com/api/deezer/search?q=ac/dc'
-
 // Variabili di stato
 let track_index = 0 // Indice della traccia corrente
 let isPlaying = false // Stato della riproduzione
@@ -51,7 +30,7 @@ let isRepeat = false
 let tracks = [] // Lista delle tracce caricate dall'API
 
 // Recupera i dati delle tracce dall'API
-fetch(apiUrl)
+fetch(url)
   .then((response) => {
     if (response.ok) {
       return response.json()
@@ -188,7 +167,6 @@ function setVolume() {
 curr_track.addEventListener('timeupdate', setUpdate)
 
 // ICONA (SALVA) DA CUORE VUOTO A -> CUORE PIENO VERDE  I
-
 const heartIcons = document.getElementsByClassName('heart')
 
 for (let i = 0; i < heartIcons.length; i++) {
@@ -202,3 +180,73 @@ for (let i = 0; i < heartIcons.length; i++) {
     }
   })
 }
+
+// MUSIC PLAYER MOBILE
+const playerDivSm = document.getElementById('player-mobile')
+
+fetch(url)
+  .then((response) => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw new Error('Errore nel recupero dei dati.')
+    }
+  })
+  .then((album) => {
+    const track = album.data[track_index]
+
+    playerDivSm.innerHTML = `
+      <div class="d-flex align-items-center">
+        <img
+          src="${track.album.cover}"
+          alt="${track.title}"
+          class="rounded-circle mx-3"
+          style="width: 50px"
+          id="mobile-track-art"
+        />
+        <h6 class="m-0 text-white" id="mobile-track-name">${track.title}</h6>
+      </div>
+      <div class="d-flex align-items-center">
+        <a href="#" class="text-decoration-none">
+          <i
+            class="bi bi-pc-display text-decoration-none text-light opacity-50 pe-3 fs-4"
+          ></i>
+        </a>
+        <a href="#" class="text-decoration-none">
+          <i class="bi bi-heart mx-1 text-light fs-4 pe-2 heart"></i>
+        </a>
+        <a href="#" id="mobile-play-btn">
+          <i class="bi bi-play-fill text-light fs-1 me-2 ms-1"></i>
+        </a>
+      </div>
+    `
+
+    //  pulsante play/pause
+    const mobilePlayBtn = document.getElementById('mobile-play-btn')
+    mobilePlayBtn.addEventListener('click', function () {
+      playpauseTrack()
+      const icon = this.querySelector('i')
+      if (isPlaying) {
+        icon.classList.remove('bi-play-fill')
+        icon.classList.add('bi-pause-fill')
+      } else {
+        icon.classList.remove('bi-pause-fill')
+        icon.classList.add('bi-play-fill')
+      }
+    })
+
+    // cuore
+    const mobileHeartIcon = playerDivSm.querySelector('.heart')
+    mobileHeartIcon.addEventListener('click', function () {
+      if (this.classList.contains('bi-heart', 'text-light')) {
+        this.classList.remove('bi-heart', 'text-light')
+        this.classList.add('bi-heart-fill', 'text-success')
+      } else {
+        this.classList.remove('bi-heart-fill', 'text-success')
+        this.classList.add('bi-heart', 'text-light')
+      }
+    })
+  })
+  .catch((error) => {
+    console.error('Errore:', error)
+  })
