@@ -185,5 +185,20 @@ function setVolume() {
   curr_track.volume = volume_slider.value / 100
 }
 
-// Aggiungi l'aggiornamento continuo del tempo
 curr_track.addEventListener('timeupdate', setUpdate)
+
+// ICONA (SALVA) DA CUORE VUOTO A -> CUORE PIENO VERDE  I
+
+const heartIcons = document.getElementsByClassName('heart')
+
+for (let i = 0; i < heartIcons.length; i++) {
+  heartIcons[i].addEventListener('click', function () {
+    if (this.classList.contains('bi-heart', 'text-light')) {
+      this.classList.remove('bi-heart', 'text-light')
+      this.classList.add('bi-heart-fill', 'text-success')
+    } else {
+      this.classList.remove('bi-heart-fill', 'text-success')
+      this.classList.add('bi-heart', 'text-light')
+    }
+  })
+}
