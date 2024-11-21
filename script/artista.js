@@ -19,6 +19,9 @@ const url = 'https://striveschool-api.herokuapp.com/api/deezer/artist/'
 const addressBarContent = new URLSearchParams(window.location.search)
 const id = addressBarContent.get('id')
 
+const key = 'tracks'
+let liked = JSON.parse(localStorage.getItem(key))
+
 const albumDivSm = document.getElementById('album-top-sm')
 const albumDivMd = document.getElementById('album-top-md')
 const braniPrefeSm = document.getElementById('brani-prefe-sm')
@@ -156,11 +159,20 @@ const createBrani = function () {
         <div class="col col-3 d-none d-md-block text-end"><p class="d-none d-md-block mb-0 opacity-50">${
           songs.data[i].rank
         }</p></div>
-        <div class="col col-1 col-md-2 text-end">
+        <div class="col col-1 col-md-2 text-end d-flex justify-content-end">
+        <button class="border border-0 delete p-0 bg-transparent me-2" style="height:20px"><i class="bi bi-heart text-white iclass"></i></button>
           <a href="#" class="text-white d-md-none"><i class="bi bi-three-dots-vertical"></i></a>
           <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
         </div>`
         recommended.appendChild(newRow)
+        let button = document.getElementsByClassName('delete')[i]
+        let iclass = document.getElementsByClassName('iclass')[i]
+        button.addEventListener('click', () => {
+          iclass.classList.replace('bi-heart', 'bi-heart-fill')
+          iclass.classList.replace('text-white', 'text-success')
+          liked.push(songs.data[i])
+          localStorage.setItem(key, JSON.stringify(liked))
+        })
         tracks.push(songs.data[i])
       }
       for (let i = 5; i < 10; i++) {
@@ -187,11 +199,20 @@ const createBrani = function () {
         <div class="col col-3 d-none d-md-block text-end"><p class="d-none d-md-block mb-0 opacity-50">${
           songs.data[i].rank
         }</p></div>
-        <div class="col col-1 col-md-2 text-end">
+        <div class="col col-1 col-md-2 text-end d-flex justify-content-end">
+        <button class="border border-0 delete2 p-0 bg-transparent me-2" style="height:20px"><i class="bi bi-heart text-white iclass2"></i></button>
           <a href="#" class="text-white d-md-none"><i class="bi bi-three-dots-vertical"></i></a>
           <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
         </div>`
         collapsible.appendChild(newRow)
+        const button2 = document.getElementsByClassName('delete2')[i - 5]
+        const iclass2 = document.getElementsByClassName('iclass2')[i - 5]
+        button2.addEventListener('click', () => {
+          iclass2.classList.replace('bi-heart', 'bi-heart-fill')
+          iclass2.classList.replace('text-white', 'text-success')
+          liked.push(songs.data[i])
+          localStorage.setItem(key, JSON.stringify(liked))
+        })
         tracks.push(songs.data[i])
       }
       altro.addEventListener('click', () => {
