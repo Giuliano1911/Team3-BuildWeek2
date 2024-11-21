@@ -10,6 +10,8 @@ const recommended = document.getElementById('recommended')
 const background = document.getElementById('background')
 let bandName = ''
 let url2 = ''
+const key = 'tracks'
+let liked = JSON.parse(localStorage.getItem(key))
 
 fetch(url + id)
   .then((response) => {
@@ -82,11 +84,20 @@ fetch(url + id)
       <div class="col col-3 d-none d-md-block text-end"><p class="d-none d-md-block mb-0 opacity-50">${
         album.tracks.data[i].rank
       }</p></div>
-      <div class="col col-1 col-md-2 text-end">
+      <div class="col col-1 col-md-2 text-end d-flex justify-content-end">
+      <button class="border border-0 delete p-0 bg-transparent me-2" style="height:20px"><i class="bi bi-heart text-white iclass"></i></button>
         <a href="#" class="text-white d-md-none"><i class="bi bi-three-dots-vertical"></i></a>
         <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
       </div>`
       albumRowSM.appendChild(newRow)
+      const button = document.getElementsByClassName('delete')[i]
+      const iclass = document.getElementsByClassName('iclass')[i]
+      button.addEventListener('click', () => {
+        iclass.classList.replace('bi-heart', 'bi-heart-fill')
+        iclass.classList.replace('text-white', 'text-success')
+        liked.push(album.tracks.data[i])
+        localStorage.setItem(key, JSON.stringify(liked))
+      })
     }
     const albumDate = new Date(album.release_date).toLocaleDateString('en-us', {
       year: 'numeric',
