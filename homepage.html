@@ -8,10 +8,26 @@
     />
     <title>Spotify - Homepage</title>
 
+    <!-- LINK GOOGLE FONTS ICON  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- BOOT ICON  -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/homepage.css" />
   </head>
@@ -35,14 +51,14 @@
                 <i class="bi bi-three-dots text-light m-1 fs-5"></i>
               </a>
               <a
-                href="./search.html"
+                href="./homepage.html"
                 class="text-decoration-none text-light d-flex align-items-center mb-2"
               >
                 <i class="bi bi-house-door-fill text-light m-1 me-3 fs-5"></i>
                 Home
               </a>
               <a
-                href="#"
+                href="./search.html"
                 class="text-decoration-none text-light d-flex align-items-center mb-2"
               >
                 <i class="bi bi-search text-light m-1 me-3 fs-5"></i> Cerca
@@ -252,12 +268,12 @@
               <div class="py-3 d-none d-md-block">
                 <a
                   href="./homepage.html"
-                  class="rounded-circle bg-dark text-decoration-none text-light opacity-75 fs-5 p-1 me-3"
+                  class="rounded-circle bg-black bg-opacity-75 text-decoration-none text-light fs-5 p-1 me-3"
                   ><i class="bi bi-chevron-left"></i
                 ></a>
                 <a
                   href="#"
-                  class="rounded-circle bg-dark bg-opacity-50 text-decoration-none text-light opacity-50 fs-5 p-1"
+                  class="rounded-circle bg-black bg-opacity-75 text-decoration-none text-light fs-5 p-1"
                   ><i class="bi bi-chevron-right"></i
                 ></a>
               </div>
@@ -319,7 +335,7 @@
               </div>
               <nav class="navbar d-md-none navbar-dark p-1 fw-bold">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Buonasera</a>
+                  <a class="navbar-brand mt-4 mb-4 fs-2" href="#">Buonasera</a>
                   <div class="d-flex gap-4">
                     <a class="nav-link" href="#">
                       <i class="bi bi-bell text-white fs-3"></i>
@@ -632,7 +648,7 @@
                 </div>
 
                 <div id="artists" class="mt-5 mb-5">
-                  <h2 class="h5 mb-0">Album per te</h2>
+                  <h2 class="h5 mb-0">Artisti consigliati</h2>
                   <div class="row d-flex flex-wrap justify-content-center mt-4">
                     <!-- Card degli aertisti -->
                     <section class="container-fluid">
@@ -643,20 +659,18 @@
                               role="button"
                               src="./assets/imgs/main/lazza.jpg"
                               class="card-img-top rounded rounded-circle"
-                              alt="cover album"
-                              onclick="window.location.href='album.html?id=1288678'"
+                              alt="propic artista"
+                              onclick="window.location.href='artista.html?id=1288678'"
                             />
                             <div class="card-body">
                               <h5
                                 role="button"
-                                onclick="window.location.href='album.html?id=1288678'"
+                                onclick="window.location.href='artista.html?id=1288678'"
                                 class="card-title"
                               >
                                 Lazza
                               </h5>
-                              <h5 role="button" class="card-text h6 opacity-75">
-                                Artista
-                              </h5>
+                              <h5 class="card-text h6 opacity-75">Artista</h5>
                             </div>
                           </div>
                         </div>
@@ -667,20 +681,18 @@
                               role="button"
                               src="./assets/imgs/main/mandragora.jpg"
                               class="card-img-top rounded rounded-circle"
-                              alt="cover album"
-                              onclick="window.location.href='album.html?id=148492'"
+                              alt="propic artista"
+                              onclick="window.location.href='artista.html?id=148492'"
                             />
                             <div class="card-body">
                               <h5
                                 role="button"
-                                onclick="window.location.href='album.html?id=148492'"
+                                onclick="window.location.href='artista.html?id=148492'"
                                 class="card-title"
                               >
                                 Mandragora
                               </h5>
-                              <h5 role="button" class="card-text h6 opacity-75">
-                                Artista
-                              </h5>
+                              <h5 class="card-text h6 opacity-75">Artista</h5>
                             </div>
                           </div>
                         </div>
@@ -691,20 +703,18 @@
                               role="button"
                               src="./assets/imgs/main/ladygaga.avif"
                               class="card-img-top rounded rounded-circle"
-                              alt="cover album"
-                              onclick="window.location.href='album.html?id=75491'"
+                              alt="propic artista"
+                              onclick="window.location.href='artista.html?id=75491'"
                             />
                             <div class="card-body">
                               <h5
                                 role="button"
-                                onclick="window.location.href='album.html?id=75491'"
+                                onclick="window.location.href='artista.html?id=75491'"
                                 class="card-title"
                               >
                                 Lady Gaga
                               </h5>
-                              <h5 role="button" class="card-text h6 opacity-75">
-                                Artista
-                              </h5>
+                              <h5 class="card-text h6 opacity-75">Artista</h5>
                             </div>
                           </div>
                         </div>
@@ -1001,11 +1011,131 @@
             </div>
           </div>
         </div>
+
+        <!-- MUSIC PLAYER MD -->
+        <div
+          class="d-sm-none d-md-flex p-3 justify-content-between align-items-center bg-sfondo text-light"
+        >
+          <!-- Elementi a sinistra -->
+          <div class="d-flex align-items-center">
+            <img src="." style="width: 80px" alt="Album" class="track-art" />
+            <div class="mx-3">
+              <h5 class="track_name mb-0" id="track-title">Titolo del brano</h5>
+              <p
+                class="track-artist mb-0 opacity-50 mt-1 fs-6"
+                id="artist-name"
+              >
+                Artista
+              </p>
+            </div>
+            <a href="#">
+              <i
+                class="bi bi-heart mx-1 text-light ms-3 opacity-75 fs-5 heart"
+              ></i>
+            </a>
+          </div>
+
+          <!-- Elementi centrali -->
+          <div class="d-flex flex-column align-items-center">
+            <div class="buttons d-flex align-items-center">
+              <div
+                class="pe-3 random-track me-3 opacity-50"
+                onclick="randomTrack()"
+              >
+                <i class="fas fa-random fs-4" title="random"></i>
+              </div>
+              <div
+                class="pe-3 prev-track me-3 opacity-75"
+                onclick="prevTrack()"
+              >
+                <i class="fa fa-step-backward fs-4"></i>
+              </div>
+              <div class="pe-3 playpause-track me-3" onclick="playpauseTrack()">
+                <i class="fa fa-play-circle fa-4x"></i>
+              </div>
+              <div
+                class="pe-3 next-track me-3 opacity-75"
+                onclick="nextTrack()"
+              >
+                <i class="fa fa-step-forward fs-4"></i>
+              </div>
+              <div
+                class="pe-3 repeat-track me-3 opacity-50"
+                onclick="repeatTrack()"
+              >
+                <i class="fa fa-repeat fs-4" title="repeat"></i>
+              </div>
+            </div>
+            <div
+              class="slider_container d-flex justify-content-center align-items-center"
+            >
+              <div class="current-time p-2 opacity-50">00:00</div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="0"
+                class="seek_slider opacity-50 bg-light"
+                style="width: 600px"
+                onchange="seekTo()"
+              />
+              <div class="total-duration p-2 opacity-50">00:00</div>
+            </div>
+          </div>
+
+          <!-- Elementi a destra -->
+          <div class="d-flex align-items-center">
+            <a href="#">
+              <i
+                class="bi bi-mic text-decoration-none text-light opacity-50 pe-3 fs-4"
+              ></i>
+            </a>
+            <a href="#">
+              <i
+                class="bi bi-collection text-decoration-none text-light opacity-50 pe-3 fs-4"
+              ></i>
+            </a>
+
+            <a href="#">
+              <i
+                class="bi bi-speaker text-decoration-none text-light opacity-50 pe-3 fs-4"
+              ></i>
+            </a>
+
+            <!-- GESTIONE VOLUME  -->
+
+            <div
+              class="slider_container me-3 d-flex justify-content-center align-items-center"
+            >
+              <i class="fa fa-volume-down p-2"></i>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="99"
+                class="volume_slider"
+                onchange="setVolume()"
+              />
+            </div>
+
+            <a href="#">
+              <i
+                class="bi bi-arrows-angle-expand text-decoration-none text-light opacity-50 pe-1 fs-4s"
+              ></i>
+            </a>
+          </div>
+        </div>
       </div>
     </main>
 
     <footer class="col mt-5">
-      <div class="fixed-bottom d-md-none py-2">
+      <div class="fixed-bottom d-md-none pb-2">
+        <!-- MUSIC PLAYER MOBILE -->
+        <div
+          class="d-flex d-md-none align-items-center justify-content-between bg-playersm rounded-3 mx-2 mb-2 p-2"
+          id="player-mobile"
+        ></div>
+
         <div class="container">
           <div class="row justify-content-around">
             <div class="col d-flex flex-column text-center">
@@ -1049,6 +1179,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="./script/date.js"></script>
+    <script src="./script/music_player.js"></script>
     <!-- <script src="./script/homepage.js"></script> -->
   </body>
 </html>

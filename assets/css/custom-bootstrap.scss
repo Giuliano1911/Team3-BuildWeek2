@@ -5,6 +5,7 @@ $new-theme: (
   'success': #1fd65e,
   'sfondo': #121212,
   'primary': #4087e1,
+  'playersm': #282828,
 );
 
 $theme-colors: map-merge($theme-colors, $new-theme);
@@ -69,4 +70,13 @@ body {
     rgba(93, 149, 182, 1) 50%,
     rgba(255, 255, 255, 1) 100%
   );
+}
+
+// pulsanti music-player
+.randomActive {
+  color: #1fd65e;
+}
+
+.repeatActive {
+  color: #1fd65e;
 }

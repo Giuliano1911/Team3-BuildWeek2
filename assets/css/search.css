@@ -17,6 +17,7 @@ body {
   justify-content: flex-start;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .category-card h3 {
@@ -35,4 +36,28 @@ body {
   bottom: -3px;
   right: -15px;
   z-index: 1;
+}
+
+
+
+.results-container {
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  max-height: 300px;  
+  overflow-y: auto;   
+  border-radius: 5px; 
+  padding: 10px;      
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.results-container p {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.results-container p:hover {
+  background-color: rgba(255, 255, 255, 0.1); 
 }
