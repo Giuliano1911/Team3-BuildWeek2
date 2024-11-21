@@ -51,7 +51,7 @@ fetch(url + id)
     <div class="d-flex align-items-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
            <div class="d-md-none position-absolute top-0 start-0 ms-2 mt-3">
                   <a href="./homepage.html" class="z-1"
-                    ><i class="bi bi-arrow-left text-white ms-2 rounded rounded-circle p-1 bg-secondary"></i
+                    ><i class="bi bi-arrow-left text-white ms-2 rounded rounded-circle p-1 bg-secondary fs-3"></i
                   ></a>
                 </div>    
     <h1 class="fw-bold fa-3x mx-4">${artist.name}</h1>
@@ -59,7 +59,7 @@ fetch(url + id)
     
     <div class="d-flex">
       
-    <p class="mb-0 ms-2 mt-3">${artist.nb_fan} ascoltatori mensili</p>
+    <p class="mb-0 ms-2 mt-4">${artist.nb_fan} ascoltatori mensili</p>
     </div>
     `
     braniPrefeSm.classList.add('d-md-none')
@@ -77,7 +77,7 @@ fetch(url + id)
     `
     albumDivMd.innerHTML = `
     
-    <div class="d-flex flex-column justify-content-end position-relative " style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
+    <div class="d-flex flex-column justify-content-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
     <div class="my-3 d-none d-md-block position-absolute top-0 start-0 ms-3">
                   <a
                     href="./homepage.html"
