@@ -1,4 +1,5 @@
-const url = 'https://striveschool-api.herokuapp.com/api/deezer/search?q=ac/dc'
+const albumId = 1434890
+const url = `https://striveschool-api.herokuapp.com/api/deezer/album/${albumId}`
 
 // BARRA DI RIPRODUZIONE
 // Elementi di sinistra
@@ -24,8 +25,8 @@ let curr_track = document.createElement('audio')
 
 // Variabili di stato
 let track_index = 0 // Indice della traccia corrente
-let isPlaying = false // Stato della riproduzione
-let isRandom = false // Stato della modalità casuale
+let isPlaying = false
+let isRandom = false
 let isRepeat = false
 let tracks = [] // Lista delle tracce caricate dall'API
 
@@ -39,7 +40,8 @@ fetch(url)
     }
   })
   .then((data) => {
-    tracks = data.data
+    console.log(data)
+    tracks = data.tracks.data
     loadTrack(track_index)
   })
   .catch((error) => {
@@ -55,9 +57,9 @@ function loadTrack(index) {
   curr_track.load()
 
   // Immagine, titolo e artista
-  track_art.src = track.album.cover // Immagine album
-  track_name.textContent = track.title // Titolo del brano
-  track_artist.textContent = track.artist.name // Nome dell'artista
+  track_art.src = track.album.cover
+  track_name.textContent = track.title
+  track_artist.textContent = track.artist.name
 
   // Resetta i timer e controlli
   reset()
@@ -71,7 +73,7 @@ function loadTrack(index) {
   curr_track.addEventListener('ended', nextTrack)
 }
 
-// Funzione di utilità per formattare il tempo (minuti e secondi)
+// Funzione per formattare il tempo
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60)
   const secs = Math.floor(seconds % 60)
@@ -193,7 +195,7 @@ fetch(url)
     }
   })
   .then((album) => {
-    const track = album.data[track_index]
+    const track = album.tracks.data[track_index]
 
     playerDivSm.innerHTML = `
       <div class="d-flex align-items-center">
