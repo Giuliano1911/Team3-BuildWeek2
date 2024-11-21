@@ -10,7 +10,11 @@
     />
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/homepage.css" />
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png" type="image/icon type">
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
+      type="image/icon type"
+    />
   </head>
   <body class="bg-sfondo">
     <main>
@@ -300,8 +304,9 @@
           <div
             class="col col-12 col-md-9 col-lg-7 overflow-y-auto p-0"
             style="max-height: 100vh"
+            id="background"
           >
-            <article class="col px-2" id="background">
+            <article class="col px-2 gradient-album">
               <section>
                 <div class="d-md-none">
                   <a href="./homepage.html"
@@ -408,22 +413,28 @@
                   </div>
                 </div>
               </section>
-              <hr class="text-light mt-0 d-none d-md-block" />
             </article>
-            <section class="container-fluid">
+            <div class="bg-dark">
+              <hr class="my-0 d-none d-md-block" />
+            </div>
+
+            <section class="container-fluid bg-sfondo">
               <div
-                class="row justify-content-between mt-3 mb-4"
+                class="row justify-content-between pt-3 mb-4"
                 id="album-row-sm"
               ></div>
               <div id="album-data" class="row text-white"></div>
             </section>
 
-            <section class="container-fluid" style="margin-bottom: 80px">
+            <section
+              class="container-fluid bg-sfondo"
+              style="padding-bottom: 80px"
+            >
               <div class="row justify-content-center" id="recommended"></div>
             </section>
 
             <!-- parte bassa della col.centrale -->
-            <div class="container d-none d-md-block small-text mb-3">
+            <div class="container d-none d-md-block small-text pb-3 bg-sfondo">
               <div class="row text-white">
                 <div class="col col-2 d-flex flex-column">
                   <h6>Azienda</h6>
