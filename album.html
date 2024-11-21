@@ -3,14 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Album</title>
+    <title>Spotify - Album</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="./assets/css/custom-bootstrap.css" />
     <link rel="stylesheet" href="./assets/css/homepage.css" />
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png" type="image/icon type">
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Spotify_icon.svg/1982px-Spotify_icon.svg.png"
+      type="image/icon type"
+    />
   </head>
   <body class="bg-sfondo">
     <main>
@@ -291,7 +303,10 @@
                   >Politica sui cookie</a
                 >
               </p>
-              <button class="btn btn-outline-light d-block mt-4 rounded-pill">
+              <button
+                class="btn btn-outline-light d-block mt-4 rounded-pill"
+                style="margin-bottom: 100px"
+              >
                 <i class="bi bi-globe"></i> Italiano
               </button>
             </div>
@@ -300,8 +315,9 @@
           <div
             class="col col-12 col-md-9 col-lg-7 overflow-y-auto p-0"
             style="max-height: 100vh"
+            id="background"
           >
-            <article class="col px-2" id="background">
+            <article class="col px-2 gradient-album">
               <section>
                 <div class="d-md-none">
                   <a href="./homepage.html"
@@ -408,22 +424,28 @@
                   </div>
                 </div>
               </section>
-              <hr class="text-light mt-0 d-none d-md-block" />
             </article>
-            <section class="container-fluid">
+            <div class="bg-dark">
+              <hr class="my-0 d-none d-md-block" />
+            </div>
+
+            <section class="container-fluid bg-sfondo">
               <div
-                class="row justify-content-between mt-3 mb-4"
+                class="row justify-content-between pt-3 mb-4"
                 id="album-row-sm"
               ></div>
               <div id="album-data" class="row text-white"></div>
             </section>
 
-            <section class="container-fluid" style="margin-bottom: 80px">
+            <section
+              class="container-fluid bg-sfondo"
+              style="padding-bottom: 80px"
+            >
               <div class="row justify-content-center" id="recommended"></div>
             </section>
 
             <!-- parte bassa della col.centrale -->
-            <div class="container d-none d-md-block small-text mb-3">
+            <div class="container d-none d-md-block small-text pb-3 bg-sfondo">
               <div class="row text-white">
                 <div class="col col-2 d-flex flex-column">
                   <h6>Azienda</h6>
@@ -570,7 +592,7 @@
                   ></a>
                 </div>
                 <hr class="mt-4 opacity-25" />
-                <p class="mb-0 mt-3 opacity-75">
+                <p class="mb-0 mt-3 opacity-75" style="padding-bottom: 130px">
                   © <span id="current-year"></span> Spotify AB
                 </p>
               </div>
@@ -743,9 +765,135 @@
         </div>
       </div>
       <div class="container" id="container"></div>
+      <div
+        class="col col-12 d-none d-md-flex ps-3 pe-0 pb-2 pt-3 justify-content-between align-items-center bg-sfondo text-light position-fixed bottom-0"
+      >
+        <!-- Elementi a sinistra -->
+        <div class="col col-md-4 col-lg-3 d-flex align-items-center">
+          <img src="." style="width: 60px" alt="Album" class="track-art" />
+          <div class="mx-3">
+            <h5 class="track_name mb-0" id="track-title">Titolo del brano</h5>
+            <p class="track-artist mb-0 opacity-50 mt-1 fs-6" id="artist-name">
+              Artista
+            </p>
+          </div>
+          <a href="#"
+            ><i
+              class="bi bi-heart mx-1 text-light ms-3 opacity-75 fs-5 heart"
+            ></i
+          ></a>
+        </div>
+
+        <!-- Elementi centrali -->
+        <div
+          class="col col-md-4 col-lg-6 d-flex flex-column align-items-center"
+        >
+          <div
+            class="buttons d-flex align-items-center justify-content-center flex-wrap mb-2"
+          >
+            <div
+              role="button"
+              class="random-track me-4 opacity-50"
+              onclick="randomTrack()"
+            >
+              <i class="fas fa-random fs-4" title="random"></i>
+            </div>
+            <div
+              role="button"
+              class="prev-track me-4 opacity-75"
+              onclick="prevTrack()"
+            >
+              <i class="fa fa-step-backward fs-4"></i>
+            </div>
+            <div
+              role="button"
+              class="playpause-track me-4"
+              onclick="playpauseTrack()"
+            >
+              <i class="fa fa-play-circle fa-3x"></i>
+            </div>
+            <div
+              role="button"
+              class="next-track me-4 opacity-75"
+              onclick="nextTrack()"
+            >
+              <i class="fa fa-step-forward fs-4"></i>
+            </div>
+            <div
+              role="button"
+              class="repeat-track me-3 opacity-50"
+              onclick="repeatTrack()"
+            >
+              <i class="fa fa-repeat fs-4" title="repeat"></i>
+            </div>
+          </div>
+          <div
+            class="slider_container d-flex justify-content-center align-items-center w-100"
+          >
+            <div class="current-time pe-2 opacity-50">00:00</div>
+            <input
+              role="button"
+              type="range"
+              min="1"
+              max="100"
+              value="0"
+              class="seek_slider opacity-50 bg-light"
+              style="width: 100%; max-width: 400px"
+              onchange="seekTo()"
+            />
+            <div class="total-duration ps-2 opacity-50">00:00</div>
+          </div>
+        </div>
+
+        <!-- Elementi a destra -->
+        <div
+          class="col col-md-4 col-lg-3 d-flex align-items-center justify-content-end"
+        >
+          <a href="#"
+            ><i
+              class="bi bi-mic text-decoration-none text-light opacity-50 pe-3 fs-4"
+            ></i
+          ></a>
+          <a href="#"
+            ><i
+              class="bi bi-collection text-decoration-none text-light opacity-50 pe-3 fs-4"
+            ></i
+          ></a>
+          <a href="#"
+            ><i
+              class="bi bi-speaker text-decoration-none text-light opacity-50 pe-3 fs-4"
+            ></i
+          ></a>
+          <div
+            class="slider_container me-3 d-flex justify-content-center align-items-center"
+          >
+            <i class="fa fa-volume-down p-2"></i>
+            <input
+              role="button"
+              type="range"
+              min="1"
+              max="100"
+              value="99"
+              class="volume_slider"
+              style="max-width: 100px"
+              onchange="setVolume()"
+            />
+          </div>
+          <a href="#"
+            ><i
+              class="bi bi-arrows-angle-expand text-decoration-none text-light opacity-50 pe-1 fs-4"
+            ></i
+          ></a>
+        </div>
+      </div>
     </main>
     <footer class="col mt-5">
       <div class="fixed-bottom d-md-none py-2">
+        <!-- MUSIC PLAYER MOBILE -->
+        <div
+          class="d-flex d-md-none align-items-center justify-content-between bg-playersm rounded-3 mx-2 mb-2 p-2"
+          id="player-mobile"
+        ></div>
         <div class="container">
           <div class="row justify-content-around">
             <div class="col d-flex flex-column text-center">

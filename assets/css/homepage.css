@@ -57,16 +57,6 @@
   background-color: rgb(45, 45, 45) !important;
 }
 
-#col-centrale {
-  background: rgb(36, 36, 36);
-  background: linear-gradient(
-    180deg,
-    rgba(36, 36, 36, 1) 0%,
-    rgba(22, 22, 22, 1) 50%,
-    rgba(18, 18, 18, 1) 100%
-  );
-}
-
 #toxicity {
   background: rgb(36, 36, 36);
   background: linear-gradient(
@@ -78,6 +68,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  #col-centrale {
+    background: rgb(36, 36, 36);
+    background: linear-gradient(
+      180deg,
+      rgba(36, 36, 36, 1) 0%,
+      rgba(22, 22, 22, 1) 50%,
+      rgba(18, 18, 18, 1) 100%
+    );
+  }
   #card-wrapper .card {
     background-color: #2a2a2a !important;
     max-width: 48% !important;

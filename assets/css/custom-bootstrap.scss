@@ -72,6 +72,16 @@ body {
   );
 }
 
+.gradient-album {
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(18, 18, 18, 1) 6%,
+    rgba(18, 18, 18, 0) 100%
+  );
+}
+
 // pulsanti music-player
 .randomActive {
   color: #1fd65e;
