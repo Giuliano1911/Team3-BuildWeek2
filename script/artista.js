@@ -24,6 +24,9 @@ const albumDivMd = document.getElementById('album-top-md')
 const braniPrefeSm = document.getElementById('brani-prefe-sm')
 const braniPrefeMd = document.getElementById('brani-prefe-md')
 const albums = document.getElementById('other-albums')
+const collapsible = document.getElementById('visualizza-altro')
+const altro = document.getElementById('text-change')
+const meno = document.getElementById('text-meno')
 let bandName = ''
 let url2 = ''
 
@@ -38,6 +41,7 @@ fetch(url + id)
   })
   .then((artist) => {
     console.log(artist)
+    const random = Math.ceil(Math.random() * 10)
     albumDivSm.innerHTML = `
     <div class="d-flex align-items-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
            <div class="d-md-none position-absolute top-0 start-0 ms-2 mt-3">
@@ -64,7 +68,7 @@ fetch(url + id)
     <span class="d-flex flex-column justify-content-center">
 
     <h6 class="text-light mb-0 ps-2">Brani che ti piacciono</h6>
-    <p class="mb-0 ps-2 text-secondary">10 brani di ${artist.name} </p></span>
+    <p class="mb-0 ps-2 text-secondary">${random} brani di ${artist.name} </p></span>
     `
     albumDivMd.innerHTML = `
     
@@ -101,7 +105,7 @@ fetch(url + id)
     <div id="go-left">
     <h6 class="text-light mb-0 small">Brani che ti piacciono</h6>
     
-    <p class="mb-0 text-secondary small">10 brani di ${artist.name} </p></span>
+    <p class="mb-0 text-secondary small">${random} brani di ${artist.name} </p></span>
     </div>
     </div>
     `
@@ -126,7 +130,7 @@ const createBrani = function () {
     })
     .then((songs) => {
       console.log(songs)
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 5; i++) {
         const trackMinutes = Math.floor(songs.data[i].duration / 60)
         let trackSeconds = songs.data[i].duration - trackMinutes * 60
         trackSeconds < 10 ? (trackSeconds = '0' + trackSeconds) : trackSeconds
@@ -156,6 +160,43 @@ const createBrani = function () {
         </div>`
         recommended.appendChild(newRow)
       }
+      for (let i = 5; i < 10; i++) {
+        const trackMinutes = Math.floor(songs.data[i].duration / 60)
+        let trackSeconds = songs.data[i].duration - trackMinutes * 60
+        trackSeconds < 10 ? (trackSeconds = '0' + trackSeconds) : trackSeconds
+        const newRow = document.createElement('div')
+        newRow.classList.add('d-flex', 'text-white', 'mt-3')
+        newRow.innerHTML = `
+        <div class="col col-11 col-md-7">
+        <div class="d-flex">
+          <p class="mb-0 me-3 mt-2">${i + 1}</p>
+          <img class="me-3" src="${
+            songs.data[i].album.cover_small
+          }" style="width:40px;height:40px">
+          <div>
+            <p class="mb-0">${songs.data[i].title}</p>
+            <a class="link-ligth link-underline-opacity-0 link-underline-light text-white link-underline-opacity-100-hover" href="./album.html?id=${
+              songs.data[i].album.id
+            }"><p class="mb-0">${songs.data[i].album.title}</p></a>
+          </div>
+        </div>
+        </div>
+        <div class="col col-3 d-none d-md-block text-end"><p class="d-none d-md-block mb-0 opacity-50">${
+          songs.data[i].rank
+        }</p></div>
+        <div class="col col-1 col-md-2 text-end">
+          <a href="#" class="text-white d-md-none"><i class="bi bi-three-dots-vertical"></i></a>
+          <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
+        </div>`
+        collapsible.appendChild(newRow)
+      }
+      altro.addEventListener('click', () => {
+        altro.classList.add('d-none')
+      })
+      meno.addEventListener('click', () => {
+        altro.classList.remove('d-none')
+      })
+
       const newh2 = document.createElement('div')
       newh2.innerHTML = `<h2 class="text-white">Discografia</h2>`
       albums.appendChild(newh2)
@@ -165,14 +206,14 @@ const createBrani = function () {
         newCol.innerHTML = `
         <div class="card bg-sfondo text-white h-100">
            <img role="button" onclick="window.location.replace('album.html?id=${
-             songs.data[i * 3].album.id
+             songs.data[i * 4].album.id
            }')" src="${
-          songs.data[i * 3].album.cover_big
+          songs.data[i * 4].album.cover_big
         }" class="card-img-top" alt="cover album">
            <div class="card-body">
                <h5 role="button" onclick="window.location.replace('album.html?id=${
-                 songs.data[i * 3].album.id
-               }')" class="card-title">${songs.data[i * 3].album.title}</h5>
+                 songs.data[i * 4].album.id
+               }')" class="card-title">${songs.data[i * 4].album.title}</h5>
             </div>
         </div>`
         albums.appendChild(newCol)
