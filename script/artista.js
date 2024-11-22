@@ -48,7 +48,7 @@ fetch(url + id)
     console.log(artist)
     const random = Math.ceil(Math.random() * 10)
     albumDivSm.innerHTML = `
-    <div class="d-flex align-items-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover; background-position:center;">
+    <div class="d-flex align-items-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover; background-position: center;">
            <div class="d-md-none position-absolute top-0 start-0 ms-2 mt-3">
                   <a href="./homepage.html" class="z-1"
                     ><i class="bi bi-arrow-left text-white ms-2 rounded rounded-circle p-1 bg-secondary fs-3"></i
@@ -77,7 +77,7 @@ fetch(url + id)
     `
     albumDivMd.innerHTML = `
     
-    <div class="d-flex flex-column justify-content-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
+    <div class="d-flex flex-column justify-content-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover; background-position: center">
     <div class="my-3 d-none d-md-block position-absolute top-0 start-0 ms-3">
                   <a
                     href="./homepage.html"
