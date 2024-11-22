@@ -1,23 +1,29 @@
 const url = 'https://striveschool-api.herokuapp.com/api/deezer/album/'
+// Prendo id dell'album da URL
 const addressBarContent = new URLSearchParams(window.location.search)
 const id = addressBarContent.get('id')
 
+// Seleziono varie parti dell'HTML
 const albumDivMd = document.getElementById('album-top-md')
 const albumDivSm = document.getElementById('album-top-sm')
 const albumRowSM = document.getElementById('album-row-sm')
 const albumData = document.getElementById('album-data')
 const recommended = document.getElementById('recommended')
 const background = document.getElementById('background')
+// Dichiaro variabili generali
 let bandName = ''
 let url2 = ''
+// Prendo lista dei brani che ti piacciono dal localStorage
 const key = 'tracks'
 let liked = JSON.parse(localStorage.getItem(key))
 
+// Se il localStorage è vuoto crea un array vuoto
 if (liked) {
 } else {
   liked = []
 }
 
+// Fetch Type 'GET'
 fetch(url + id)
   .then((response) => {
     console.log(response)
@@ -28,12 +34,16 @@ fetch(url + id)
     }
   })
   .then((album) => {
+    // da qui si può lavorare con l'oggetto album
     console.log(album)
     bandName = `${album.artist.name}`
+    // seleziono solo anno di release dell'album
     const releaseDate = new Date(album.release_date).getFullYear()
+    // divido i minuti dai secondi in due variabili distinte
     const albumMinutes = Math.floor(album.duration / 60)
     const albumSeconds = album.duration - albumMinutes * 60
 
+    // Riempio div già presente in HTML con dettagli dell'album (solo da md in poi)
     albumDivMd.innerHTML = `<img class="bg-color" style="width:150px;height:150px" crossorigin='anonymous' src='${album.cover_big}' onload="start()">
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
@@ -50,6 +60,7 @@ fetch(url + id)
     </div>
     </div>
     `
+    // Riempio div già presente in HTML con dettagli dell'album (fino a md)
     albumDivSm.innerHTML = `<img crossorigin='anonymous' src=${album.cover_big}  class="mx-auto w-50 bg-color"> 
     <div class="ms-3 d-flex flex-column justify-content-between">
     <div>
@@ -66,11 +77,14 @@ fetch(url + id)
     </div>
     </div>
     `
+    // risolve un problema del server (max 25 tracks)
     let nSong = album.nb_tracks
     nSong > 25 ? (nSong = 25) : nSong
+    // ciclo che genera le canzoni dell'album
     for (let i = 0; i < nSong; i++) {
       const trackMinutes = Math.floor(album.tracks.data[i].duration / 60)
       let trackSeconds = album.tracks.data[i].duration - trackMinutes * 60
+      // metto lo 0 se i secondi hanno una sola cifra
       trackSeconds < 10 ? (trackSeconds = '0' + trackSeconds) : trackSeconds
       const newRow = document.createElement('div')
       newRow.classList.add('d-flex', 'text-white', 'mt-3')
@@ -95,6 +109,7 @@ fetch(url + id)
         <p class="d-none d-md-block mb-0 opacity-50">${trackMinutes}:${trackSeconds}</p>
       </div>`
       albumRowSM.appendChild(newRow)
+      // EventListener per cuoricino
       const button = document.getElementsByClassName('delete')[i]
       const iclass = document.getElementsByClassName('iclass')[i]
       button.addEventListener('click', () => {
@@ -104,13 +119,16 @@ fetch(url + id)
         localStorage.setItem(key, JSON.stringify(liked))
       })
     }
+    // prendo solo mese e anno di release dell'album
     const albumDate = new Date(album.release_date).toLocaleDateString('en-us', {
       year: 'numeric',
       month: 'short',
     })
     albumData.innerHTML = `<p class="mb-0">${albumDate}</p>
     <p class="small-text">©${album.label}</p>`
+    // url2 /search, cerco i 25 brani dell'artista
     url2 = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${bandName}`
+    // qui parte la funzione che genera i tre album consigliati in fondo alla colonna cenrtale
     createRecommended()
   })
   .catch((err) => {
