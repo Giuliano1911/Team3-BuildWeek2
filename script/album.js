@@ -13,6 +13,11 @@ let url2 = ''
 const key = 'tracks'
 let liked = JSON.parse(localStorage.getItem(key))
 
+if (liked) {
+} else {
+  liked = []
+}
+
 fetch(url + id)
   .then((response) => {
     console.log(response)

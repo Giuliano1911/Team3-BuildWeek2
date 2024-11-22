@@ -22,6 +22,11 @@ const id = addressBarContent.get('id')
 const key = 'tracks'
 let liked = JSON.parse(localStorage.getItem(key))
 
+if (liked) {
+} else {
+  liked = []
+}
+
 const albumDivSm = document.getElementById('album-top-sm')
 const albumDivMd = document.getElementById('album-top-md')
 const braniPrefeSm = document.getElementById('brani-prefe-sm')
