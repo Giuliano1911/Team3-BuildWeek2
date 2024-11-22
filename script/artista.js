@@ -77,7 +77,7 @@ fetch(url + id)
     `
     albumDivMd.innerHTML = `
     
-    <div class="d-flex flex-column justify-content-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover;">
+    <div class="d-flex flex-column justify-content-end position-relative" style="background-image: url(${artist.picture_big}); height: 400px; background-repeat: no-repeat; background-size: cover; background-position:center">
     <div class="my-3 d-none d-md-block position-absolute top-0 start-0 ms-3">
                   <a
                     href="./homepage.html"
