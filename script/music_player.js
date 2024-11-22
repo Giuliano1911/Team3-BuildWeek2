@@ -252,3 +252,11 @@ fetch(url)
   .catch((error) => {
     console.error('Errore:', error)
   })
+
+const sabani = document.getElementById('sabani')
+const sabanizza = document.getElementsByClassName('sabanizza')
+sabani.addEventListener('click', () => {
+  for (let i = 0; i < sabanizza.length; i++) {
+    sabanizza[i].src = './assets/imgs/profile pictures/GigiSabanipng.png'
+  }
+})
